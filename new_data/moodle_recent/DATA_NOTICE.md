@@ -1,0 +1,1 @@
+The issue text in this folder comes from Moodle's public tracker (moodle.atlassian.net), which gives no licence for it, so it is shared for research only, credited by issue key, and is not covered by this repository's MIT licence.

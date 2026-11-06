@@ -1,0 +1,8 @@
+{
+  "source": "https://moodle.atlassian.net/rest/api/2/search/jql",
+  "jql": "project = MDL AND cf[10043] is not EMPTY AND created > \"2016-08-08\" ORDER BY created ASC",
+  "fields": "summary,description,customfield_10043,created,resolutiondate,updated,status,resolution,issuetype,priority,components",
+  "pages": 42,
+  "issues": 4146,
+  "collected_at": "2026-11-03T11:57:02.921633+00:00"
+}

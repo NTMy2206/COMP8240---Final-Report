@@ -1,0 +1,8 @@
+measure,value
+pairwise_items,72.0
+pairwise_order_consistency,0.8472222222222222
+pairwise_first_position_rate,0.4791666666666667
+pairwise_prefers_gpt2sp_when_consistent,0.39344262295081966
+pairwise_closer_is_gpt2sp_share,0.6338028169014085
+pairwise_agrees_with_recorded_when_consistent,0.5111111111111111
+pairwise_n_consistent_nontie,180.0

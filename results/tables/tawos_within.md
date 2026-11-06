@@ -1,0 +1,25 @@
+| project    | repository   | in_gpt2sp_benchmark   |   issues |   n_test |   seeds |   our_gpt2sp |   gpt2sp_sd |   tawosi_deepse |   mean_mae |   median_mae |   tawosi_median | gpt2sp_beats_median   |
+|:-----------|:-------------|:----------------------|---------:|---------:|--------:|-------------:|------------:|----------------:|-----------:|-------------:|----------------:|:----------------------|
+| MESOS      | Apache       | True                  |     1513 |      303 |       3 |         1.36 |        0.02 |            1.34 |       1.37 |         1.33 |            1.34 | False                 |
+| ALOY       | Apache       | False                 |      241 |       49 |       3 |         1.62 |        0.19 |            1.51 |       2.26 |         1.47 |            1.44 | False                 |
+| TISTUD     | Appcelerator | True                  |     2794 |      559 |       3 |         1.57 |        0.02 |            1.63 |       2.01 |         1.51 |            1.51 | False                 |
+| APSTUD     | Appcelerator | True                  |      476 |       96 |       3 |         3.95 |        0.04 |            4.31 |       3.98 |         3.98 |            3.99 | True                  |
+| CLI        | Appcelerator | False                 |      293 |       59 |       3 |         1.72 |        0.03 |            1.76 |       2.17 |         1.80 |            1.77 | True                  |
+| DAEMON     | Appcelerator | False                 |      205 |       41 |       3 |         2.74 |        0.06 |            3.29 |       2.81 |         2.80 |            2.74 | True                  |
+| TIDOC      | Appcelerator | False                 |     1005 |      201 |       3 |         3.31 |        0.13 |            2.72 |       2.99 |         2.78 |            2.77 | False                 |
+| TIMOB      | Appcelerator | True                  |     3915 |      783 |       3 |         2.50 |        0.07 |            2.41 |       2.55 |         2.53 |            2.53 | True                  |
+| CLOV       | Atlassian    | True                  |      336 |       68 |       3 |         4.07 |        0.28 |            3.78 |       5.93 |         4.04 |            4.01 | False                 |
+| CONFCLOUD  | Atlassian    | False                 |      234 |       47 |       3 |         1.60 |        0.16 |            1.48 |       1.47 |         1.32 |            1.33 | False                 |
+| CONFSERVER | Atlassian    | False                 |      456 |       92 |       3 |         1.00 |        0.01 |            0.91 |       1.36 |         0.97 |            0.96 | False                 |
+| DNN        | DNNSoftware  | False                 |     2064 |      413 |       3 |         0.72 |        0.00 |            0.72 |       0.80 |         0.71 |            0.71 | False                 |
+| DURACLOUD  | Duraspace    | True                  |      310 |       62 |       3 |         0.67 |        0.01 |            0.68 |       0.68 |         0.68 |            0.68 | True                  |
+| FAB        | Hyperledger  | False                 |      303 |       61 |       3 |         0.68 |        0.05 |            0.86 |       1.17 |         0.64 |            0.67 | False                 |
+| STL        | Hyperledger  | False                 |      206 |       42 |       3 |         1.07 |        0.14 |            1.18 |       0.98 |         0.98 |            0.95 | False                 |
+| DM         | Lsstcorp     | True                  |     5381 |     1077 |       3 |         1.45 |        0.04 |            1.61 |       2.60 |         1.61 |            1.61 | True                  |
+| COMPASS    | MongoDB      | False                 |      260 |       52 |       3 |         1.49 |        0.10 |            1.63 |       1.43 |         1.31 |            1.38 | False                 |
+| SERVER     | MongoDB      | False                 |      519 |      104 |       3 |         0.88 |        0.01 |            0.89 |       1.55 |         0.86 |            0.85 | False                 |
+| EVG        | MongoDB      | False                 |     2824 |      565 |       3 |         0.68 |        0.02 |            0.63 |       0.68 |         0.70 |            0.69 | True                  |
+| MDL        | Moodle       | True                  |     1394 |      279 |       3 |         2.76 |        1.19 |            3.55 |      14.53 |         6.30 |            6.31 | True                  |
+| MULE       | Mulesoft     | True                  |     2935 |      587 |       3 |         2.36 |        0.14 |            2.24 |       2.79 |         2.23 |            2.24 | False                 |
+| NEXUS      | Sonatype     | False                 |     1425 |      285 |       3 |         1.08 |        0.05 |            1.08 |       1.11 |         1.17 |            1.17 | True                  |
+| XD         | Spring       | True                  |      811 |      163 |       3 |         1.57 |        0.02 |            1.45 |       1.66 |         1.54 |            1.55 | False                 |

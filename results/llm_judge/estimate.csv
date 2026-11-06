@@ -1,0 +1,8 @@
+estimator,mae
+"LLM judge, rep 1",1.65
+"LLM judge, rep 2",1.7
+"LLM judge, rep 3",1.73
+"LLM judge, median of reps",1.71
+GPT2SP seed 1 (raw),0.8636869213
+GPT2SP seed 1 (rounded),0.81
+Median baseline,1.0

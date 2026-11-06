@@ -1,0 +1,31 @@
+# Python / OS
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Training outputs that are large or regenerated
+tb/
+models/
+demo/output/
+
+# Tawosi et al.'s package has no licence: fetched by replication/fetch_tawosi_package.sh, not redistributed
+replication/deepse/Deep-SE/
+replication/deepse/datasets/
+replication/deepse/.theano/
+new_data/tawos/raw/
+new_data/tawos/marked_data/
+
+# Human estimates: returned workbooks may identify people; only de-identified results/human/ is published
+new_data/annotation/returned/
+
+# LaTeX build files
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.synctex.gz
+
+# returned workbooks that could not be verified as independent answers (not used)
+new_data/annotation/quarantine_unverified/

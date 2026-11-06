@@ -1,0 +1,18 @@
+| scenario    | train              | test               |   n_test |   seeds |   our_gpt2sp |   gpt2sp_sd |   gpt2sp_buggy_formula |   mean_mae |   median_mae |   tawosi_gpt2sp | gpt2sp_beats_median   |
+|:------------|:-------------------|:-------------------|---------:|--------:|-------------:|------------:|-----------------------:|-----------:|-------------:|----------------:|:----------------------|
+| within_repo | mesos              | usergrid           |      482 |       3 |         1.07 |        0.01 |                   0.64 |       1.10 |         0.89 |            1.11 | False                 |
+| within_repo | usergrid           | mesos              |     1680 |       3 |         1.52 |        0.01 |                   1.48 |       1.51 |         1.50 |            1.52 | False                 |
+| within_repo | appceleratorstudio | aptanastudio       |      829 |       3 |         4.45 |        0.03 |                   2.63 |       4.23 |         4.38 |            4.62 | False                 |
+| within_repo | appceleratorstudio | titanium           |     2251 |       3 |         3.24 |        0.01 |                   2.60 |       3.54 |         3.17 |            3.28 | False                 |
+| within_repo | titanium           | appceleratorstudio |     2919 |       3 |         2.27 |        0.10 |                   2.04 |       2.76 |         2.10 |          nan    | False                 |
+| within_repo | aptanastudio       | titanium           |     2251 |       3 |         3.82 |        0.10 |                   3.62 |       4.15 |         4.19 |            4.09 | True                  |
+| within_repo | mule               | mulestudio         |      732 |       3 |         3.47 |        0.17 |                   2.98 |       3.33 |         3.26 |            3.48 | False                 |
+| within_repo | mulestudio         | mule               |      889 |       3 |         2.72 |        0.05 |                   2.30 |       2.84 |         2.60 |            3.03 | False                 |
+| cross_repo  | clover             | usergrid           |      482 |       3 |         1.23 |        0.13 |                   1.07 |       2.25 |         0.89 |          nan    | False                 |
+| cross_repo  | talendesb          | mesos              |     1680 |       3 |         1.62 |        0.04 |                   1.45 |       1.55 |         1.57 |          nan    | False                 |
+| cross_repo  | talenddataquality  | aptanastudio       |      829 |       3 |         5.64 |        0.63 |                   4.71 |       4.14 |         4.38 |          nan    | False                 |
+| cross_repo  | mule               | titanium           |     2251 |       3 |         3.35 |        0.12 |                   3.22 |       3.26 |         3.17 |          nan    | False                 |
+| cross_repo  | talenddataquality  | appceleratorstudio |     2919 |       3 |         3.15 |        0.68 |                   3.09 |       2.71 |         2.10 |          nan    | False                 |
+| cross_repo  | mulestudio         | titanium           |     2251 |       3 |         3.26 |        0.04 |                   3.23 |       3.39 |         3.17 |          nan    | False                 |
+| cross_repo  | appceleratorstudio | mulestudio         |      732 |       3 |         3.33 |        0.02 |                   1.74 |       3.57 |         3.26 |          nan    | False                 |
+| cross_repo  | appceleratorstudio | mule               |      889 |       3 |         2.64 |        0.01 |                   1.68 |       3.00 |         2.60 |          nan    | False                 |

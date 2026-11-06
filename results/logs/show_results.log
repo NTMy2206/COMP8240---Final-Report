@@ -1,0 +1,109 @@
+
+=== Replication, within-project MAE (16 projects) ===
+           project  paper_gpt2sp  gpt2sp_buggy_formula  tawosi_gpt2sp  our_gpt2sp  gpt2sp_sd  tawosi_deepse  our_deepse  median_mae  mean_mae
+appceleratorstudio          0.84                  0.84           1.53        1.50       0.08           1.42        1.45        1.30      1.91
+      aptanastudio          1.93                  2.03           3.52        3.64       0.30           4.14        4.48        3.61      3.60
+            bamboo          0.44                  0.44           0.77        0.78       0.03           0.81        0.84        0.75      1.21
+            clover          1.98                  2.09           3.76        3.75       0.10           3.39        3.51        3.75      4.58
+    datamanagement          3.10                  3.04           5.39        5.47       0.08           5.86        6.00        6.19      8.66
+         duracloud          0.48                  0.47           0.80        0.83       0.11           0.82        0.74        0.81      0.99
+      jirasoftware          0.92                  1.03           1.57        1.83       0.21           1.70        1.83        2.28      2.37
+             mesos          0.66                  0.66           1.21        1.18       0.03           1.12        1.12        1.22      1.41
+            moodle          4.09                  6.28           8.38       11.22       1.32           7.89        7.69        6.48     12.57
+              mule          1.43                  1.41           2.61        2.51       0.04           2.59        2.49        2.47      2.59
+        mulestudio          2.04                  2.05           3.70        3.65       0.07           3.67        3.69        3.58      3.66
+          springxd          0.96                  0.96           1.78        1.73       0.01           1.70        1.59        1.72      2.05
+ talenddataquality          1.58                  1.83           3.65        3.28       0.21           3.61         NaN        3.30      4.55
+         talendesb          0.50                  0.50           0.86        0.91       0.03           0.90         NaN        0.91      1.03
+          titanium          1.36                  1.29           2.35        2.32       0.14           2.09        2.11        2.04      3.02
+          usergrid          0.68                  0.69           1.19        1.22       0.01           1.18        1.16        1.16      1.20
+            MEDIAN          1.16                  1.16           2.06        2.07       0.08           1.90        1.97        2.16      2.48
+
+=== Authors' released checkpoints, re-scored ===
+           project  n_test  batch_size  mae  inspection_notebook_mae
+appceleratorstudio     584         525 1.51                     0.84
+      aptanastudio     166         149 3.46                     1.93
+            bamboo     105          93 0.77                     0.44
+            clover      77          69 3.55                     1.98
+    datamanagement     934         840 5.58                     3.10
+         duracloud     134         119 0.86                     0.48
+      jirasoftware      71          63 1.63                     0.92
+             mesos     336         302 1.18                     0.66
+            moodle     234         209 7.30                     4.09
+              mule     178         159 2.55                     1.43
+        mulestudio     147         131 3.64                     2.04
+          springxd     706         634 1.73                     0.96
+ talenddataquality     277         248 2.83                     1.58
+         talendesb     174         156 0.89                     0.50
+          titanium     451         405 2.44                     1.36
+          usergrid      97          86 1.20                     0.68
+
+=== Scott-Knott ESD (rank 1 = best group) ===
+              project method  rank  mae  n
+ALL (per-project MAE) Median     1 2.67 14
+ALL (per-project MAE) DeepSE     1 2.76 14
+ALL (per-project MAE) GPT2SP     1 2.97 14
+ALL (per-project MAE)   Mean     2 3.56 14
+
+=== Cross-project MAE ===
+   scenario              train               test  n_test  seeds  our_gpt2sp  gpt2sp_sd  gpt2sp_buggy_formula  mean_mae  median_mae  tawosi_gpt2sp  gpt2sp_beats_median
+within_repo              mesos           usergrid     482      3        1.07       0.01                  0.64      1.10        0.89           1.11                False
+within_repo           usergrid              mesos    1680      3        1.52       0.01                  1.48      1.51        1.50           1.52                False
+within_repo appceleratorstudio       aptanastudio     829      3        4.45       0.03                  2.63      4.23        4.38           4.62                False
+within_repo appceleratorstudio           titanium    2251      3        3.24       0.01                  2.60      3.54        3.17           3.28                False
+within_repo           titanium appceleratorstudio    2919      3        2.27       0.10                  2.04      2.76        2.10            NaN                False
+within_repo       aptanastudio           titanium    2251      3        3.82       0.10                  3.62      4.15        4.19           4.09                 True
+within_repo               mule         mulestudio     732      3        3.47       0.17                  2.98      3.33        3.26           3.48                False
+within_repo         mulestudio               mule     889      3        2.72       0.05                  2.30      2.84        2.60           3.03                False
+ cross_repo             clover           usergrid     482      3        1.23       0.13                  1.07      2.25        0.89            NaN                False
+ cross_repo          talendesb              mesos    1680      3        1.62       0.04                  1.45      1.55        1.57            NaN                False
+ cross_repo  talenddataquality       aptanastudio     829      3        5.64       0.63                  4.71      4.14        4.38            NaN                False
+ cross_repo               mule           titanium    2251      3        3.35       0.12                  3.22      3.26        3.17            NaN                False
+ cross_repo  talenddataquality appceleratorstudio    2919      3        3.15       0.68                  3.09      2.71        2.10            NaN                False
+ cross_repo         mulestudio           titanium    2251      3        3.26       0.04                  3.23      3.39        3.17            NaN                False
+ cross_repo appceleratorstudio         mulestudio     732      3        3.33       0.02                  1.74      3.57        3.26            NaN                False
+ cross_repo appceleratorstudio               mule     889      3        2.64       0.01                  1.68      3.00        2.60            NaN                False
+
+=== New data 1: Tawosi/TAWOS dataset (23 projects) ===
+   project   repository  in_gpt2sp_benchmark  issues  n_test  seeds  our_gpt2sp  gpt2sp_sd  tawosi_deepse  mean_mae  median_mae  tawosi_median  gpt2sp_beats_median
+     MESOS       Apache                 True    1513     303      3        1.36       0.02           1.34      1.37        1.33           1.34                False
+      ALOY       Apache                False     241      49      3        1.62       0.19           1.51      2.26        1.47           1.44                False
+    TISTUD Appcelerator                 True    2794     559      3        1.57       0.02           1.63      2.01        1.51           1.51                False
+    APSTUD Appcelerator                 True     476      96      3        3.95       0.04           4.31      3.98        3.98           3.99                 True
+       CLI Appcelerator                False     293      59      3        1.72       0.03           1.76      2.17        1.80           1.77                 True
+    DAEMON Appcelerator                False     205      41      3        2.74       0.06           3.29      2.81        2.80           2.74                 True
+     TIDOC Appcelerator                False    1005     201      3        3.31       0.13           2.72      2.99        2.78           2.77                False
+     TIMOB Appcelerator                 True    3915     783      3        2.50       0.07           2.41      2.55        2.53           2.53                 True
+      CLOV    Atlassian                 True     336      68      3        4.07       0.28           3.78      5.93        4.04           4.01                False
+ CONFCLOUD    Atlassian                False     234      47      3        1.60       0.16           1.48      1.47        1.32           1.33                False
+CONFSERVER    Atlassian                False     456      92      3        1.00       0.01           0.91      1.36        0.97           0.96                False
+       DNN  DNNSoftware                False    2064     413      3        0.72       0.00           0.72      0.80        0.71           0.71                False
+ DURACLOUD    Duraspace                 True     310      62      3        0.67       0.01           0.68      0.68        0.68           0.68                 True
+       FAB  Hyperledger                False     303      61      3        0.68       0.05           0.86      1.17        0.64           0.67                False
+       STL  Hyperledger                False     206      42      3        1.07       0.14           1.18      0.98        0.98           0.95                False
+        DM     Lsstcorp                 True    5381    1077      3        1.45       0.04           1.61      2.60        1.61           1.61                 True
+   COMPASS      MongoDB                False     260      52      3        1.49       0.10           1.63      1.43        1.31           1.38                False
+    SERVER      MongoDB                False     519     104      3        0.88       0.01           0.89      1.55        0.86           0.85                False
+       EVG      MongoDB                False    2824     565      3        0.68       0.02           0.63      0.68        0.70           0.69                 True
+       MDL       Moodle                 True    1394     279      3        2.76       1.19           3.55     14.53        6.30           6.31                 True
+      MULE     Mulesoft                 True    2935     587      3        2.36       0.14           2.24      2.79        2.23           2.24                False
+     NEXUS     Sonatype                False    1425     285      3        1.08       0.05           1.08      1.11        1.17           1.17                 True
+        XD       Spring                 True     811     163      3        1.57       0.02           1.45      1.66        1.54           1.55                False
+
+=== New data 2: recent Moodle issues (collected 2026) ===
+                                 setting      evaluated_on  n_test  seeds  gpt2sp_mae  gpt2sp_sd  mean_mae  median_mae
+train recent -> test recent (newest 20%) recent test split     673      3        0.87       0.01      1.38        1.02
+     train 2016 benchmark -> test recent recent test split     673      3        4.25       0.98     15.30        6.11
+     train 2016 benchmark -> test recent        all recent    3363      3        4.08       0.94     14.90        5.76
+
+=== Moodle collection funnel ===
+                        step  issues
+             raw API results    4146
+Done + resolution Fixed/Done    3622
+             story point > 0    3463
+         integer story point    3462
+                 not an Epic    3462
+             non-empty title    3462
+  not a sprint CLR container    3363
+
+Story points, benchmark 2016 vs recent: {'n': 1166, 'mean': 15.54, 'median': 8.0, 'max': 100.0} vs {'n': 3363, 'mean': 2.38, 'median': 2.0, 'max': 26.0}

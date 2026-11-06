@@ -1,0 +1,604 @@
+device: mps  scenario: cross_repo  pairs: 8  seeds: [1, 2, 3]
+
+>>> train clover -> test usergrid  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+You may ignore this warning if your `pad_token_id` (50256) is identical to the `bos_token_id` (50256), `eos_token_id` (50256), or the `sep_token_id` (None), and your input is not padded.
+  epoch  0  train MAE loss  32.68  val MAE loss  34.68  test MAE  36.99
+  epoch  1  train MAE loss  22.43  val MAE loss  15.47  test MAE  14.78
+  epoch  2  train MAE loss  12.08  val MAE loss  10.22  test MAE  10.12
+  epoch  3  train MAE loss   5.66  val MAE loss   4.06  test MAE   2.45
+  epoch  4  train MAE loss   3.82  val MAE loss   2.67  test MAE   1.11
+  epoch  5  train MAE loss   3.37  val MAE loss   2.87  test MAE   1.68
+  epoch  6  train MAE loss   3.44  val MAE loss   2.74  test MAE   1.04
+  epoch  7  train MAE loss   3.52  val MAE loss   2.70  test MAE   1.08
+  epoch  8  train MAE loss   3.63  val MAE loss   3.06  test MAE   1.41
+  epoch  9  train MAE loss   3.24  val MAE loss   3.04  test MAE   1.53
+  epoch 10  train MAE loss   3.46  val MAE loss   3.85  test MAE   2.45
+  epoch 11  train MAE loss   2.72  val MAE loss   2.73  test MAE   1.50
+  epoch 12  train MAE loss   2.78  val MAE loss   3.26  test MAE   2.03
+  epoch 13  train MAE loss   2.29  val MAE loss   3.07  test MAE   2.08
+  epoch 14  train MAE loss   2.19  val MAE loss   3.27  test MAE   2.07
+  epoch 15  train MAE loss   2.12  val MAE loss   2.92  test MAE   1.73
+  epoch 16  train MAE loss   2.11  val MAE loss   3.32  test MAE   2.10
+  epoch 17  train MAE loss   1.77  val MAE loss   3.41  test MAE   2.22
+  epoch 18  train MAE loss   1.84  val MAE loss   3.23  test MAE   2.01
+  epoch 19  train MAE loss   1.66  val MAE loss   3.15  test MAE   1.92
+<<< MAE 1.11  MdAE 0.80  (inspection-notebook formula: 0.97)  best epoch 4  10.2s
+
+>>> train talendesb -> test mesos  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  28.60  val MAE loss  17.42  test MAE  17.25
+  epoch  1  train MAE loss  24.17  val MAE loss   3.78  test MAE   4.43
+  epoch  2  train MAE loss   4.75  val MAE loss   1.45  test MAE   2.60
+  epoch  3  train MAE loss   1.94  val MAE loss   3.59  test MAE   2.92
+  epoch  4  train MAE loss   2.69  val MAE loss   0.96  test MAE   1.96
+  epoch  5  train MAE loss   1.13  val MAE loss   1.31  test MAE   1.51
+  epoch  6  train MAE loss   1.31  val MAE loss   0.98  test MAE   1.97
+  epoch  7  train MAE loss   1.26  val MAE loss   0.89  test MAE   1.62
+  epoch  8  train MAE loss   1.34  val MAE loss   1.38  test MAE   1.56
+  epoch  9  train MAE loss   1.19  val MAE loss   0.92  test MAE   1.85
+  epoch 10  train MAE loss   1.12  val MAE loss   1.04  test MAE   1.51
+  epoch 11  train MAE loss   1.12  val MAE loss   0.88  test MAE   1.57
+  epoch 12  train MAE loss   1.09  val MAE loss   0.95  test MAE   1.90
+  epoch 13  train MAE loss   1.02  val MAE loss   0.97  test MAE   1.50
+  epoch 14  train MAE loss   0.99  val MAE loss   0.86  test MAE   1.58
+  epoch 15  train MAE loss   0.88  val MAE loss   0.87  test MAE   1.60
+  epoch 16  train MAE loss   0.87  val MAE loss   0.91  test MAE   1.55
+  epoch 17  train MAE loss   0.81  val MAE loss   0.87  test MAE   1.67
+  epoch 18  train MAE loss   0.80  val MAE loss   0.89  test MAE   1.59
+  epoch 19  train MAE loss   0.78  val MAE loss   0.90  test MAE   1.57
+<<< MAE 1.58  MdAE 0.93  (inspection-notebook formula: 1.42)  best epoch 14  78.0s
+
+>>> train talenddataquality -> test aptanastudio  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  24.49  val MAE loss  95.98  test MAE  98.95
+  epoch  1  train MAE loss  52.64  val MAE loss  15.56  test MAE  12.81
+  epoch  2  train MAE loss   9.96  val MAE loss   3.09  test MAE   6.35
+  epoch  3  train MAE loss   4.94  val MAE loss   4.72  test MAE   4.05
+  epoch  4  train MAE loss   4.09  val MAE loss   3.42  test MAE   4.37
+  epoch  5  train MAE loss   4.07  val MAE loss   3.19  test MAE   4.54
+  epoch  6  train MAE loss   3.71  val MAE loss   4.70  test MAE   4.15
+  epoch  7  train MAE loss   3.59  val MAE loss   3.24  test MAE   4.40
+  epoch  8  train MAE loss   3.62  val MAE loss   3.91  test MAE   4.14
+  epoch  9  train MAE loss   3.43  val MAE loss   3.82  test MAE   4.10
+  epoch 10  train MAE loss   3.44  val MAE loss   3.33  test MAE   4.29
+  epoch 11  train MAE loss   3.17  val MAE loss   4.86  test MAE   4.42
+  epoch 12  train MAE loss   3.24  val MAE loss   3.71  test MAE   4.22
+  epoch 13  train MAE loss   3.04  val MAE loss   3.67  test MAE   4.27
+  epoch 14  train MAE loss   2.91  val MAE loss   4.07  test MAE   4.33
+  epoch 15  train MAE loss   2.75  val MAE loss   3.60  test MAE   4.38
+  epoch 16  train MAE loss   2.64  val MAE loss   3.92  test MAE   4.46
+  epoch 17  train MAE loss   2.45  val MAE loss   3.64  test MAE   4.51
+  epoch 18  train MAE loss   2.54  val MAE loss   3.75  test MAE   4.54
+  epoch 19  train MAE loss   2.41  val MAE loss   3.86  test MAE   4.55
+<<< MAE 6.35  MdAE 5.97  (inspection-notebook formula: 5.30)  best epoch 2  15.6s
+
+>>> train mule -> test titanium  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  22.74  val MAE loss 101.04  test MAE 101.92
+  epoch  1  train MAE loss  49.38  val MAE loss  18.35  test MAE  16.48
+  epoch  2  train MAE loss  10.80  val MAE loss   4.60  test MAE   6.11
+  epoch  3  train MAE loss   4.04  val MAE loss   3.56  test MAE   4.08
+  epoch  4  train MAE loss   3.06  val MAE loss   2.68  test MAE   3.74
+  epoch  5  train MAE loss   3.00  val MAE loss   3.19  test MAE   3.74
+  epoch  6  train MAE loss   2.89  val MAE loss   2.78  test MAE   3.77
+  epoch  7  train MAE loss   2.84  val MAE loss   2.64  test MAE   3.29
+  epoch  8  train MAE loss   2.58  val MAE loss   2.54  test MAE   3.46
+  epoch  9  train MAE loss   2.40  val MAE loss   3.09  test MAE   3.43
+  epoch 10  train MAE loss   2.29  val MAE loss   2.72  test MAE   3.62
+  epoch 11  train MAE loss   2.28  val MAE loss   3.37  test MAE   3.68
+  epoch 12  train MAE loss   2.34  val MAE loss   2.60  test MAE   3.54
+  epoch 13  train MAE loss   2.21  val MAE loss   2.56  test MAE   3.42
+  epoch 14  train MAE loss   1.88  val MAE loss   2.81  test MAE   3.44
+  epoch 15  train MAE loss   1.72  val MAE loss   2.63  test MAE   3.56
+  epoch 16  train MAE loss   1.74  val MAE loss   2.78  test MAE   3.45
+  epoch 17  train MAE loss   1.63  val MAE loss   2.80  test MAE   3.44
+  epoch 18  train MAE loss   1.51  val MAE loss   2.68  test MAE   3.45
+  epoch 19  train MAE loss   1.50  val MAE loss   2.69  test MAE   3.45
+<<< MAE 3.46  MdAE 1.83  (inspection-notebook formula: 3.33)  best epoch 8  51.8s
+
+>>> train talenddataquality -> test appceleratorstudio  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  24.49  val MAE loss  95.98  test MAE  99.10
+  epoch  1  train MAE loss  52.64  val MAE loss  15.56  test MAE  14.87
+  epoch  2  train MAE loss   9.95  val MAE loss   3.09  test MAE   3.92
+  epoch  3  train MAE loss   4.94  val MAE loss   4.72  test MAE   2.93
+  epoch  4  train MAE loss   4.09  val MAE loss   3.42  test MAE   2.16
+  epoch  5  train MAE loss   4.07  val MAE loss   3.19  test MAE   2.21
+  epoch  6  train MAE loss   3.72  val MAE loss   4.65  test MAE   3.33
+  epoch  7  train MAE loss   3.66  val MAE loss   3.33  test MAE   2.29
+  epoch  8  train MAE loss   3.61  val MAE loss   3.90  test MAE   2.60
+  epoch  9  train MAE loss   3.44  val MAE loss   3.78  test MAE   2.60
+  epoch 10  train MAE loss   3.50  val MAE loss   3.39  test MAE   2.43
+  epoch 11  train MAE loss   3.20  val MAE loss   4.80  test MAE   3.92
+  epoch 12  train MAE loss   3.24  val MAE loss   3.60  test MAE   2.73
+  epoch 13  train MAE loss   3.13  val MAE loss   3.49  test MAE   2.61
+  epoch 14  train MAE loss   3.02  val MAE loss   4.19  test MAE   3.31
+  epoch 15  train MAE loss   2.88  val MAE loss   3.62  test MAE   2.76
+  epoch 16  train MAE loss   2.79  val MAE loss   3.77  test MAE   2.97
+  epoch 17  train MAE loss   2.61  val MAE loss   3.83  test MAE   3.12
+  epoch 18  train MAE loss   2.69  val MAE loss   3.69  test MAE   3.04
+  epoch 19  train MAE loss   2.55  val MAE loss   3.76  test MAE   3.13
+<<< MAE 3.92  MdAE 3.23  (inspection-notebook formula: 3.85)  best epoch 2  21.3s
+
+>>> train mulestudio -> test titanium  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  19.79  val MAE loss  74.96  test MAE  72.29
+  epoch  1  train MAE loss  34.52  val MAE loss  10.06  test MAE  10.76
+  epoch  2  train MAE loss   7.03  val MAE loss   6.34  test MAE   5.16
+  epoch  3  train MAE loss   3.88  val MAE loss   4.68  test MAE   4.46
+  epoch  4  train MAE loss   3.31  val MAE loss   4.33  test MAE   3.76
+  epoch  5  train MAE loss   3.43  val MAE loss   5.12  test MAE   4.04
+  epoch  6  train MAE loss   3.29  val MAE loss   4.65  test MAE   4.41
+  epoch  7  train MAE loss   3.37  val MAE loss   5.07  test MAE   3.98
+  epoch  8  train MAE loss   3.83  val MAE loss   5.01  test MAE   3.91
+  epoch  9  train MAE loss   3.02  val MAE loss   4.28  test MAE   3.79
+  epoch 10  train MAE loss   3.33  val MAE loss   4.08  test MAE   3.29
+  epoch 11  train MAE loss   2.87  val MAE loss   4.50  test MAE   3.49
+  epoch 12  train MAE loss   2.77  val MAE loss   4.15  test MAE   3.34
+  epoch 13  train MAE loss   2.70  val MAE loss   4.19  test MAE   3.29
+  epoch 14  train MAE loss   2.71  val MAE loss   4.30  test MAE   3.33
+  epoch 15  train MAE loss   2.34  val MAE loss   4.22  test MAE   3.41
+  epoch 16  train MAE loss   2.42  val MAE loss   4.23  test MAE   3.39
+  epoch 17  train MAE loss   2.22  val MAE loss   4.38  test MAE   3.42
+  epoch 18  train MAE loss   2.21  val MAE loss   4.24  test MAE   3.39
+  epoch 19  train MAE loss   2.07  val MAE loss   4.21  test MAE   3.41
+<<< MAE 3.29  MdAE 2.48  (inspection-notebook formula: 3.26)  best epoch 10  61.3s
+
+>>> train appceleratorstudio -> test mulestudio  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  22.99  val MAE loss  84.41  test MAE  84.01
+  epoch  1  train MAE loss  40.73  val MAE loss   2.40  test MAE   4.19
+  epoch  2  train MAE loss   3.81  val MAE loss   1.80  test MAE   3.69
+  epoch  3  train MAE loss   3.31  val MAE loss   4.34  test MAE   4.92
+  epoch  4  train MAE loss   4.20  val MAE loss   6.30  test MAE   7.67
+  epoch  5  train MAE loss   6.07  val MAE loss   2.05  test MAE   3.58
+  epoch  6  train MAE loss   2.90  val MAE loss   1.41  test MAE   3.34
+  epoch  7  train MAE loss   2.79  val MAE loss   2.26  test MAE   3.69
+  epoch  8  train MAE loss   2.83  val MAE loss   1.40  test MAE   3.32
+  epoch  9  train MAE loss   2.69  val MAE loss   1.73  test MAE   3.46
+  epoch 10  train MAE loss   2.63  val MAE loss   1.45  test MAE   3.38
+  epoch 11  train MAE loss   2.69  val MAE loss   1.64  test MAE   3.42
+  epoch 12  train MAE loss   2.58  val MAE loss   1.49  test MAE   3.38
+  epoch 13  train MAE loss   2.55  val MAE loss   1.77  test MAE   3.49
+  epoch 14  train MAE loss   2.46  val MAE loss   1.59  test MAE   3.45
+  epoch 15  train MAE loss   2.44  val MAE loss   1.81  test MAE   3.56
+  epoch 16  train MAE loss   2.39  val MAE loss   2.41  test MAE   3.82
+  epoch 17  train MAE loss   2.36  val MAE loss   1.75  test MAE   3.57
+  epoch 18  train MAE loss   2.34  val MAE loss   1.71  test MAE   3.56
+  epoch 19  train MAE loss   2.30  val MAE loss   1.80  test MAE   3.58
+<<< MAE 3.32  MdAE 2.68  (inspection-notebook formula: 1.74)  best epoch 8  89.2s
+
+>>> train appceleratorstudio -> test mule  (seed 1)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  22.99  val MAE loss  84.41  test MAE  80.48
+  epoch  1  train MAE loss  40.73  val MAE loss   2.40  test MAE   3.20
+  epoch  2  train MAE loss   3.81  val MAE loss   1.80  test MAE   2.82
+  epoch  3  train MAE loss   3.31  val MAE loss   4.34  test MAE   4.66
+  epoch  4  train MAE loss   4.20  val MAE loss   6.30  test MAE   6.39
+  epoch  5  train MAE loss   6.07  val MAE loss   2.05  test MAE   3.05
+  epoch  6  train MAE loss   2.90  val MAE loss   1.41  test MAE   2.65
+  epoch  7  train MAE loss   2.79  val MAE loss   2.26  test MAE   3.17
+  epoch  8  train MAE loss   2.83  val MAE loss   1.40  test MAE   2.63
+  epoch  9  train MAE loss   2.69  val MAE loss   1.73  test MAE   2.84
+  epoch 10  train MAE loss   2.63  val MAE loss   1.45  test MAE   2.65
+  epoch 11  train MAE loss   2.69  val MAE loss   1.64  test MAE   2.77
+  epoch 12  train MAE loss   2.58  val MAE loss   1.49  test MAE   2.67
+  epoch 13  train MAE loss   2.55  val MAE loss   1.77  test MAE   2.84
+  epoch 14  train MAE loss   2.46  val MAE loss   1.59  test MAE   2.72
+  epoch 15  train MAE loss   2.44  val MAE loss   1.81  test MAE   2.85
+  epoch 16  train MAE loss   2.39  val MAE loss   2.41  test MAE   3.21
+  epoch 17  train MAE loss   2.36  val MAE loss   1.75  test MAE   2.79
+  epoch 18  train MAE loss   2.34  val MAE loss   1.71  test MAE   2.77
+  epoch 19  train MAE loss   2.30  val MAE loss   1.80  test MAE   2.84
+<<< MAE 2.63  MdAE 2.90  (inspection-notebook formula: 1.67)  best epoch 8  95.0s
+
+>>> train clover -> test usergrid  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  19.54  val MAE loss  63.70  test MAE  56.32
+  epoch  1  train MAE loss  36.02  val MAE loss  16.08  test MAE  16.81
+  epoch  2  train MAE loss   8.30  val MAE loss   3.49  test MAE   1.94
+  epoch  3  train MAE loss   3.79  val MAE loss   2.71  test MAE   0.99
+  epoch  4  train MAE loss   3.45  val MAE loss   2.65  test MAE   1.36
+  epoch  5  train MAE loss   3.42  val MAE loss   2.90  test MAE   1.29
+  epoch  6  train MAE loss   3.77  val MAE loss   2.92  test MAE   1.59
+  epoch  7  train MAE loss   3.21  val MAE loss   3.86  test MAE   2.65
+  epoch  8  train MAE loss   2.99  val MAE loss   2.96  test MAE   1.72
+  epoch  9  train MAE loss   2.88  val MAE loss   3.51  test MAE   2.39
+  epoch 10  train MAE loss   2.31  val MAE loss   2.77  test MAE   1.49
+  epoch 11  train MAE loss   2.30  val MAE loss   3.23  test MAE   1.82
+  epoch 12  train MAE loss   2.30  val MAE loss   3.04  test MAE   1.59
+  epoch 13  train MAE loss   2.18  val MAE loss   3.39  test MAE   2.08
+  epoch 14  train MAE loss   2.23  val MAE loss   4.19  test MAE   2.82
+  epoch 15  train MAE loss   1.88  val MAE loss   3.05  test MAE   1.70
+  epoch 16  train MAE loss   1.61  val MAE loss   3.08  test MAE   1.70
+  epoch 17  train MAE loss   1.55  val MAE loss   3.39  test MAE   1.96
+  epoch 18  train MAE loss   1.69  val MAE loss   3.21  test MAE   1.80
+  epoch 19  train MAE loss   1.52  val MAE loss   3.11  test MAE   1.71
+<<< MAE 1.36  MdAE 1.12  (inspection-notebook formula: 1.19)  best epoch 4  9.0s
+
+>>> train talendesb -> test mesos  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  18.42  val MAE loss  75.06  test MAE  70.62
+  epoch  1  train MAE loss  38.69  val MAE loss  18.10  test MAE  16.95
+  epoch  2  train MAE loss  10.21  val MAE loss   6.51  test MAE   7.54
+  epoch  3  train MAE loss   3.61  val MAE loss   1.32  test MAE   1.51
+  epoch  4  train MAE loss   3.68  val MAE loss   4.87  test MAE   5.94
+  epoch  5  train MAE loss   3.36  val MAE loss   2.20  test MAE   1.99
+  epoch  6  train MAE loss   2.12  val MAE loss   1.19  test MAE   1.52
+  epoch  7  train MAE loss   1.34  val MAE loss   1.08  test MAE   2.16
+  epoch  8  train MAE loss   1.21  val MAE loss   1.23  test MAE   1.52
+  epoch  9  train MAE loss   1.27  val MAE loss   0.94  test MAE   1.79
+  epoch 10  train MAE loss   1.16  val MAE loss   0.92  test MAE   1.73
+  epoch 11  train MAE loss   1.12  val MAE loss   1.00  test MAE   1.55
+  epoch 12  train MAE loss   1.10  val MAE loss   0.92  test MAE   1.75
+  epoch 13  train MAE loss   1.08  val MAE loss   0.97  test MAE   1.54
+  epoch 14  train MAE loss   1.11  val MAE loss   0.95  test MAE   1.54
+  epoch 15  train MAE loss   1.09  val MAE loss   0.90  test MAE   1.74
+  epoch 16  train MAE loss   1.08  val MAE loss   0.87  test MAE   1.60
+  epoch 17  train MAE loss   1.03  val MAE loss   0.92  test MAE   1.52
+  epoch 18  train MAE loss   0.99  val MAE loss   0.86  test MAE   1.57
+  epoch 19  train MAE loss   0.96  val MAE loss   0.85  test MAE   1.62
+<<< MAE 1.62  MdAE 0.96  (inspection-notebook formula: 1.45)  best epoch 19  101.5s
+
+>>> train talenddataquality -> test aptanastudio  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  23.48  val MAE loss  58.86  test MAE  57.17
+  epoch  1  train MAE loss  29.70  val MAE loss  10.22  test MAE   8.23
+  epoch  2  train MAE loss  13.89  val MAE loss   3.09  test MAE   5.57
+  epoch  3  train MAE loss   6.02  val MAE loss   4.35  test MAE   4.13
+  epoch  4  train MAE loss   5.56  val MAE loss   3.72  test MAE   7.27
+  epoch  5  train MAE loss   4.66  val MAE loss   4.47  test MAE   4.06
+  epoch  6  train MAE loss   3.78  val MAE loss   2.95  test MAE   5.13
+  epoch  7  train MAE loss   3.79  val MAE loss   4.37  test MAE   4.01
+  epoch  8  train MAE loss   3.70  val MAE loss   3.95  test MAE   4.09
+  epoch  9  train MAE loss   3.53  val MAE loss   3.44  test MAE   4.28
+  epoch 10  train MAE loss   3.57  val MAE loss   4.06  test MAE   4.10
+  epoch 11  train MAE loss   3.34  val MAE loss   3.59  test MAE   4.18
+  epoch 12  train MAE loss   3.13  val MAE loss   3.78  test MAE   4.22
+  epoch 13  train MAE loss   2.99  val MAE loss   3.63  test MAE   4.39
+  epoch 14  train MAE loss   2.93  val MAE loss   4.23  test MAE   4.55
+  epoch 15  train MAE loss   2.71  val MAE loss   3.44  test MAE   4.55
+  epoch 16  train MAE loss   2.65  val MAE loss   3.94  test MAE   4.47
+  epoch 17  train MAE loss   2.63  val MAE loss   4.09  test MAE   4.46
+  epoch 18  train MAE loss   2.57  val MAE loss   3.76  test MAE   4.44
+  epoch 19  train MAE loss   2.45  val MAE loss   3.77  test MAE   4.44
+<<< MAE 5.13  MdAE 4.04  (inspection-notebook formula: 4.28)  best epoch 6  40.0s
+
+>>> train mule -> test titanium  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  23.22  val MAE loss  58.98  test MAE  60.77
+  epoch  1  train MAE loss  32.97  val MAE loss  20.27  test MAE  19.04
+  epoch  2  train MAE loss  11.16  val MAE loss   5.96  test MAE   7.39
+  epoch  3  train MAE loss   4.31  val MAE loss   2.53  test MAE   3.36
+  epoch  4  train MAE loss   2.88  val MAE loss   2.66  test MAE   3.34
+  epoch  5  train MAE loss   3.59  val MAE loss   2.89  test MAE   3.99
+  epoch  6  train MAE loss   2.80  val MAE loss   2.72  test MAE   3.34
+  epoch  7  train MAE loss   2.86  val MAE loss   2.73  test MAE   3.72
+  epoch  8  train MAE loss   2.52  val MAE loss   2.67  test MAE   3.34
+  epoch  9  train MAE loss   2.65  val MAE loss   2.71  test MAE   3.57
+  epoch 10  train MAE loss   2.37  val MAE loss   2.97  test MAE   3.50
+  epoch 11  train MAE loss   2.18  val MAE loss   2.66  test MAE   3.41
+  epoch 12  train MAE loss   2.32  val MAE loss   2.91  test MAE   3.47
+  epoch 13  train MAE loss   2.28  val MAE loss   3.10  test MAE   4.17
+  epoch 14  train MAE loss   2.72  val MAE loss   2.58  test MAE   3.45
+  epoch 15  train MAE loss   2.00  val MAE loss   2.85  test MAE   3.50
+  epoch 16  train MAE loss   1.96  val MAE loss   2.55  test MAE   3.39
+  epoch 17  train MAE loss   1.84  val MAE loss   2.57  test MAE   3.43
+  epoch 18  train MAE loss   1.72  val MAE loss   2.61  test MAE   3.38
+  epoch 19  train MAE loss   1.73  val MAE loss   2.62  test MAE   3.39
+<<< MAE 3.36  MdAE 1.73  (inspection-notebook formula: 3.23)  best epoch 3  20.6s
+
+>>> train talenddataquality -> test appceleratorstudio  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  23.48  val MAE loss  58.86  test MAE  59.81
+  epoch  1  train MAE loss  29.70  val MAE loss  10.22  test MAE   9.60
+  epoch  2  train MAE loss  13.89  val MAE loss   3.09  test MAE   3.07
+  epoch  3  train MAE loss   6.02  val MAE loss   4.35  test MAE   2.72
+  epoch  4  train MAE loss   5.56  val MAE loss   3.72  test MAE   4.95
+  epoch  5  train MAE loss   4.66  val MAE loss   4.47  test MAE   2.81
+  epoch  6  train MAE loss   3.78  val MAE loss   2.95  test MAE   2.66
+  epoch  7  train MAE loss   3.79  val MAE loss   4.37  test MAE   2.87
+  epoch  8  train MAE loss   3.70  val MAE loss   3.95  test MAE   2.66
+  epoch  9  train MAE loss   3.52  val MAE loss   3.42  test MAE   2.37
+  epoch 10  train MAE loss   3.56  val MAE loss   3.98  test MAE   2.89
+  epoch 11  train MAE loss   3.30  val MAE loss   3.61  test MAE   2.66
+  epoch 12  train MAE loss   3.10  val MAE loss   3.94  test MAE   3.27
+  epoch 13  train MAE loss   2.96  val MAE loss   3.84  test MAE   3.27
+  epoch 14  train MAE loss   2.83  val MAE loss   3.87  test MAE   3.50
+  epoch 15  train MAE loss   2.61  val MAE loss   3.97  test MAE   3.64
+  epoch 16  train MAE loss   2.53  val MAE loss   3.70  test MAE   3.31
+  epoch 17  train MAE loss   2.52  val MAE loss   4.07  test MAE   3.71
+  epoch 18  train MAE loss   2.46  val MAE loss   4.08  test MAE   3.69
+  epoch 19  train MAE loss   2.36  val MAE loss   3.90  test MAE   3.47
+<<< MAE 2.66  MdAE 1.57  (inspection-notebook formula: 2.60)  best epoch 6  54.2s
+
+>>> train mulestudio -> test titanium  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  47.95  val MAE loss  52.68  test MAE  52.11
+  epoch  1  train MAE loss  21.90  val MAE loss  26.38  test MAE  26.87
+  epoch  2  train MAE loss  12.84  val MAE loss   4.54  test MAE   3.49
+  epoch  3  train MAE loss   3.00  val MAE loss   4.14  test MAE   3.40
+  epoch  4  train MAE loss   2.91  val MAE loss   4.40  test MAE   3.43
+  epoch  5  train MAE loss   3.26  val MAE loss   4.38  test MAE   3.98
+  epoch  6  train MAE loss   3.27  val MAE loss   6.38  test MAE   5.24
+  epoch  7  train MAE loss   4.02  val MAE loss   4.10  test MAE   3.28
+  epoch  8  train MAE loss   2.82  val MAE loss   4.20  test MAE   3.28
+  epoch  9  train MAE loss   2.60  val MAE loss   4.10  test MAE   3.29
+  epoch 10  train MAE loss   2.64  val MAE loss   4.10  test MAE   3.24
+  epoch 11  train MAE loss   2.74  val MAE loss   4.61  test MAE   3.57
+  epoch 12  train MAE loss   2.69  val MAE loss   4.20  test MAE   3.41
+  epoch 13  train MAE loss   2.37  val MAE loss   4.60  test MAE   3.63
+  epoch 14  train MAE loss   2.45  val MAE loss   4.15  test MAE   3.45
+  epoch 15  train MAE loss   2.22  val MAE loss   4.26  test MAE   3.45
+  epoch 16  train MAE loss   2.17  val MAE loss   4.12  test MAE   3.37
+  epoch 17  train MAE loss   2.13  val MAE loss   4.11  test MAE   3.43
+  epoch 18  train MAE loss   2.14  val MAE loss   4.16  test MAE   3.41
+  epoch 19  train MAE loss   1.90  val MAE loss   4.21  test MAE   3.45
+<<< MAE 3.28  MdAE 2.48  (inspection-notebook formula: 3.25)  best epoch 7  42.0s
+
+>>> train appceleratorstudio -> test mulestudio  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  28.83  val MAE loss  63.31  test MAE  59.86
+  epoch  1  train MAE loss  33.33  val MAE loss  17.90  test MAE  16.78
+  epoch  2  train MAE loss   9.04  val MAE loss   6.64  test MAE   6.60
+  epoch  3  train MAE loss   4.81  val MAE loss   3.19  test MAE   4.67
+  epoch  4  train MAE loss   3.84  val MAE loss   2.61  test MAE   3.87
+  epoch  5  train MAE loss   3.09  val MAE loss   1.56  test MAE   3.48
+  epoch  6  train MAE loss   2.97  val MAE loss   2.08  test MAE   3.59
+  epoch  7  train MAE loss   2.81  val MAE loss   1.45  test MAE   3.39
+  epoch  8  train MAE loss   2.77  val MAE loss   1.80  test MAE   3.48
+  epoch  9  train MAE loss   2.69  val MAE loss   1.44  test MAE   3.35
+  epoch 10  train MAE loss   2.66  val MAE loss   1.60  test MAE   3.40
+  epoch 11  train MAE loss   2.65  val MAE loss   1.58  test MAE   3.38
+  epoch 12  train MAE loss   2.54  val MAE loss   1.63  test MAE   3.41
+  epoch 13  train MAE loss   2.57  val MAE loss   1.55  test MAE   3.41
+  epoch 14  train MAE loss   2.41  val MAE loss   1.89  test MAE   3.56
+  epoch 15  train MAE loss   2.41  val MAE loss   1.82  test MAE   3.59
+  epoch 16  train MAE loss   2.35  val MAE loss   2.19  test MAE   3.72
+  epoch 17  train MAE loss   2.24  val MAE loss   1.80  test MAE   3.57
+  epoch 18  train MAE loss   2.24  val MAE loss   1.93  test MAE   3.60
+  epoch 19  train MAE loss   2.17  val MAE loss   1.95  test MAE   3.61
+<<< MAE 3.35  MdAE 2.59  (inspection-notebook formula: 1.75)  best epoch 9  99.9s
+
+>>> train appceleratorstudio -> test mule  (seed 2)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  28.83  val MAE loss  63.31  test MAE  61.49
+  epoch  1  train MAE loss  33.33  val MAE loss  17.90  test MAE  18.16
+  epoch  2  train MAE loss   9.04  val MAE loss   6.64  test MAE   6.82
+  epoch  3  train MAE loss   4.81  val MAE loss   3.19  test MAE   3.52
+  epoch  4  train MAE loss   3.84  val MAE loss   2.61  test MAE   3.39
+  epoch  5  train MAE loss   3.09  val MAE loss   1.56  test MAE   2.73
+  epoch  6  train MAE loss   2.97  val MAE loss   2.08  test MAE   3.05
+  epoch  7  train MAE loss   2.81  val MAE loss   1.45  test MAE   2.67
+  epoch  8  train MAE loss   2.77  val MAE loss   1.80  test MAE   2.87
+  epoch  9  train MAE loss   2.69  val MAE loss   1.44  test MAE   2.65
+  epoch 10  train MAE loss   2.66  val MAE loss   1.60  test MAE   2.75
+  epoch 11  train MAE loss   2.65  val MAE loss   1.58  test MAE   2.73
+  epoch 12  train MAE loss   2.54  val MAE loss   1.63  test MAE   2.76
+  epoch 13  train MAE loss   2.57  val MAE loss   1.55  test MAE   2.70
+  epoch 14  train MAE loss   2.41  val MAE loss   1.89  test MAE   2.87
+  epoch 15  train MAE loss   2.41  val MAE loss   1.82  test MAE   2.82
+  epoch 16  train MAE loss   2.35  val MAE loss   2.19  test MAE   3.05
+  epoch 17  train MAE loss   2.24  val MAE loss   1.80  test MAE   2.81
+  epoch 18  train MAE loss   2.24  val MAE loss   1.93  test MAE   2.90
+  epoch 19  train MAE loss   2.17  val MAE loss   1.95  test MAE   2.91
+<<< MAE 2.65  MdAE 2.75  (inspection-notebook formula: 1.69)  best epoch 9  101.5s
+
+>>> train clover -> test usergrid  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  61.02  val MAE loss  37.52  test MAE  38.34
+  epoch  1  train MAE loss  24.67  val MAE loss   9.71  test MAE   9.12
+  epoch  2  train MAE loss   8.16  val MAE loss   4.17  test MAE   3.01
+  epoch  3  train MAE loss   4.35  val MAE loss   2.74  test MAE   1.39
+  epoch  4  train MAE loss   3.98  val MAE loss   3.39  test MAE   2.24
+  epoch  5  train MAE loss   4.20  val MAE loss   4.32  test MAE   2.96
+  epoch  6  train MAE loss   4.74  val MAE loss   2.74  test MAE   0.99
+  epoch  7  train MAE loss   4.74  val MAE loss   4.72  test MAE   3.70
+  epoch  8  train MAE loss   4.31  val MAE loss   3.12  test MAE   1.29
+  epoch  9  train MAE loss   3.69  val MAE loss   2.63  test MAE   1.21
+  epoch 10  train MAE loss   3.59  val MAE loss   2.73  test MAE   1.02
+  epoch 11  train MAE loss   3.34  val MAE loss   2.97  test MAE   1.33
+  epoch 12  train MAE loss   3.27  val MAE loss   2.79  test MAE   1.45
+  epoch 13  train MAE loss   2.88  val MAE loss   3.08  test MAE   1.61
+  epoch 14  train MAE loss   2.65  val MAE loss   2.82  test MAE   1.44
+  epoch 15  train MAE loss   2.93  val MAE loss   3.18  test MAE   1.86
+  epoch 16  train MAE loss   2.47  val MAE loss   2.86  test MAE   1.54
+  epoch 17  train MAE loss   2.33  val MAE loss   2.98  test MAE   1.67
+  epoch 18  train MAE loss   2.31  val MAE loss   3.24  test MAE   1.96
+  epoch 19  train MAE loss   2.19  val MAE loss   3.12  test MAE   1.83
+<<< MAE 1.21  MdAE 0.88  (inspection-notebook formula: 1.06)  best epoch 9  19.7s
+
+>>> train talendesb -> test mesos  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  36.27  val MAE loss  53.28  test MAE  53.10
+  epoch  1  train MAE loss  37.96  val MAE loss  32.78  test MAE  31.49
+  epoch  2  train MAE loss  15.15  val MAE loss   5.05  test MAE   6.46
+  epoch  3  train MAE loss   2.39  val MAE loss   4.97  test MAE   5.66
+  epoch  4  train MAE loss   3.40  val MAE loss   4.90  test MAE   4.46
+  epoch  5  train MAE loss   1.76  val MAE loss   2.72  test MAE   3.37
+  epoch  6  train MAE loss   1.73  val MAE loss   1.02  test MAE   1.53
+  epoch  7  train MAE loss   1.24  val MAE loss   0.93  test MAE   1.75
+  epoch  8  train MAE loss   1.11  val MAE loss   1.06  test MAE   1.53
+  epoch  9  train MAE loss   1.16  val MAE loss   0.91  test MAE   1.69
+  epoch 10  train MAE loss   1.13  val MAE loss   0.98  test MAE   1.54
+  epoch 11  train MAE loss   1.09  val MAE loss   0.97  test MAE   1.93
+  epoch 12  train MAE loss   1.10  val MAE loss   0.88  test MAE   1.66
+  epoch 13  train MAE loss   1.01  val MAE loss   1.04  test MAE   1.51
+  epoch 14  train MAE loss   1.07  val MAE loss   0.90  test MAE   1.54
+  epoch 15  train MAE loss   1.03  val MAE loss   0.94  test MAE   1.85
+  epoch 16  train MAE loss   0.94  val MAE loss   0.93  test MAE   1.52
+  epoch 17  train MAE loss   0.90  val MAE loss   0.91  test MAE   1.75
+  epoch 18  train MAE loss   0.95  val MAE loss   0.90  test MAE   1.70
+  epoch 19  train MAE loss   0.89  val MAE loss   0.92  test MAE   1.56
+<<< MAE 1.66  MdAE 1.02  (inspection-notebook formula: 1.49)  best epoch 12  63.7s
+
+>>> train talenddataquality -> test aptanastudio  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  49.09  val MAE loss  97.53  test MAE 100.34
+  epoch  1  train MAE loss  50.25  val MAE loss  21.25  test MAE  18.44
+  epoch  2  train MAE loss   9.46  val MAE loss   7.70  test MAE   5.56
+  epoch  3  train MAE loss   5.18  val MAE loss   2.92  test MAE   5.45
+  epoch  4  train MAE loss   3.85  val MAE loss   2.96  test MAE   5.30
+  epoch  5  train MAE loss   3.96  val MAE loss   4.42  test MAE   4.13
+  epoch  6  train MAE loss   3.92  val MAE loss   3.07  test MAE   5.15
+  epoch  7  train MAE loss   3.77  val MAE loss   4.72  test MAE   4.06
+  epoch  8  train MAE loss   3.96  val MAE loss   3.27  test MAE   4.56
+  epoch  9  train MAE loss   3.69  val MAE loss   4.12  test MAE   4.12
+  epoch 10  train MAE loss   3.62  val MAE loss   3.45  test MAE   4.36
+  epoch 11  train MAE loss   3.63  val MAE loss   4.10  test MAE   4.08
+  epoch 12  train MAE loss   3.54  val MAE loss   3.50  test MAE   4.26
+  epoch 13  train MAE loss   3.34  val MAE loss   4.28  test MAE   4.03
+  epoch 14  train MAE loss   3.35  val MAE loss   3.31  test MAE   4.43
+  epoch 15  train MAE loss   3.26  val MAE loss   4.12  test MAE   4.05
+  epoch 16  train MAE loss   3.29  val MAE loss   4.03  test MAE   4.08
+  epoch 17  train MAE loss   3.11  val MAE loss   3.33  test MAE   4.36
+  epoch 18  train MAE loss   3.03  val MAE loss   3.52  test MAE   4.23
+  epoch 19  train MAE loss   3.02  val MAE loss   3.65  test MAE   4.19
+<<< MAE 5.45  MdAE 4.74  (inspection-notebook formula: 4.55)  best epoch 3  19.6s
+
+>>> train mule -> test titanium  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  35.40  val MAE loss  29.87  test MAE  32.63
+  epoch  1  train MAE loss  21.36  val MAE loss  17.97  test MAE  19.65
+  epoch  2  train MAE loss  11.51  val MAE loss   6.16  test MAE   6.10
+  epoch  3  train MAE loss   4.77  val MAE loss   3.09  test MAE   3.64
+  epoch  4  train MAE loss   3.16  val MAE loss   2.90  test MAE   4.08
+  epoch  5  train MAE loss   3.23  val MAE loss   2.46  test MAE   3.22
+  epoch  6  train MAE loss   2.72  val MAE loss   2.63  test MAE   3.61
+  epoch  7  train MAE loss   3.00  val MAE loss   2.47  test MAE   3.24
+  epoch  8  train MAE loss   2.66  val MAE loss   2.52  test MAE   3.47
+  epoch  9  train MAE loss   2.50  val MAE loss   2.75  test MAE   3.38
+  epoch 10  train MAE loss   2.38  val MAE loss   2.89  test MAE   3.54
+  epoch 11  train MAE loss   2.39  val MAE loss   2.74  test MAE   3.56
+  epoch 12  train MAE loss   2.23  val MAE loss   3.03  test MAE   3.51
+  epoch 13  train MAE loss   2.16  val MAE loss   2.64  test MAE   3.59
+  epoch 14  train MAE loss   2.02  val MAE loss   2.79  test MAE   3.45
+  epoch 15  train MAE loss   2.01  val MAE loss   2.70  test MAE   3.45
+  epoch 16  train MAE loss   1.90  val MAE loss   2.71  test MAE   3.51
+  epoch 17  train MAE loss   1.87  val MAE loss   2.88  test MAE   3.51
+  epoch 18  train MAE loss   1.73  val MAE loss   2.80  test MAE   3.53
+  epoch 19  train MAE loss   1.79  val MAE loss   2.77  test MAE   3.53
+<<< MAE 3.22  MdAE 2.20  (inspection-notebook formula: 3.09)  best epoch 5  30.3s
+
+>>> train talenddataquality -> test appceleratorstudio  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  49.09  val MAE loss  97.53  test MAE 100.26
+  epoch  1  train MAE loss  50.25  val MAE loss  21.25  test MAE  20.41
+  epoch  2  train MAE loss   9.46  val MAE loss   7.70  test MAE   5.99
+  epoch  3  train MAE loss   5.18  val MAE loss   2.92  test MAE   2.87
+  epoch  4  train MAE loss   3.85  val MAE loss   2.96  test MAE   2.76
+  epoch  5  train MAE loss   3.96  val MAE loss   4.42  test MAE   2.77
+  epoch  6  train MAE loss   3.92  val MAE loss   2.99  test MAE   2.68
+  epoch  7  train MAE loss   3.75  val MAE loss   4.62  test MAE   2.96
+  epoch  8  train MAE loss   3.89  val MAE loss   3.07  test MAE   2.31
+  epoch  9  train MAE loss   3.64  val MAE loss   4.10  test MAE   2.72
+  epoch 10  train MAE loss   3.50  val MAE loss   3.61  test MAE   2.53
+  epoch 11  train MAE loss   3.50  val MAE loss   3.57  test MAE   2.57
+  epoch 12  train MAE loss   3.28  val MAE loss   3.91  test MAE   2.96
+  epoch 13  train MAE loss   3.00  val MAE loss   3.82  test MAE   3.19
+  epoch 14  train MAE loss   2.88  val MAE loss   3.04  test MAE   2.72
+  epoch 15  train MAE loss   2.84  val MAE loss   3.95  test MAE   3.72
+  epoch 16  train MAE loss   2.80  val MAE loss   3.13  test MAE   2.96
+  epoch 17  train MAE loss   2.67  val MAE loss   3.69  test MAE   3.41
+  epoch 18  train MAE loss   2.50  val MAE loss   3.52  test MAE   3.16
+  epoch 19  train MAE loss   2.51  val MAE loss   3.38  test MAE   3.00
+<<< MAE 2.87  MdAE 1.91  (inspection-notebook formula: 2.82)  best epoch 3  27.4s
+
+>>> train mulestudio -> test titanium  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  47.08  val MAE loss 149.52  test MAE 152.71
+  epoch  1  train MAE loss  91.81  val MAE loss  62.64  test MAE  63.89
+  epoch  2  train MAE loss  31.73  val MAE loss  12.08  test MAE  11.51
+  epoch  3  train MAE loss   6.00  val MAE loss   4.16  test MAE   3.48
+  epoch  4  train MAE loss   3.87  val MAE loss   4.64  test MAE   3.53
+  epoch  5  train MAE loss   3.14  val MAE loss   5.10  test MAE   3.92
+  epoch  6  train MAE loss   3.39  val MAE loss   5.27  test MAE   5.14
+  epoch  7  train MAE loss   3.97  val MAE loss   4.64  test MAE   3.61
+  epoch  8  train MAE loss   3.11  val MAE loss   4.40  test MAE   3.99
+  epoch  9  train MAE loss   3.13  val MAE loss   4.22  test MAE   3.29
+  epoch 10  train MAE loss   2.66  val MAE loss   4.24  test MAE   3.29
+  epoch 11  train MAE loss   2.69  val MAE loss   4.09  test MAE   3.22
+  epoch 12  train MAE loss   2.76  val MAE loss   4.10  test MAE   3.21
+  epoch 13  train MAE loss   2.67  val MAE loss   4.13  test MAE   3.29
+  epoch 14  train MAE loss   2.64  val MAE loss   4.29  test MAE   3.32
+  epoch 15  train MAE loss   2.62  val MAE loss   4.22  test MAE   3.40
+  epoch 16  train MAE loss   2.58  val MAE loss   4.29  test MAE   3.34
+  epoch 17  train MAE loss   2.54  val MAE loss   4.38  test MAE   3.42
+  epoch 18  train MAE loss   2.41  val MAE loss   4.20  test MAE   3.31
+  epoch 19  train MAE loss   2.45  val MAE loss   4.19  test MAE   3.32
+<<< MAE 3.22  MdAE 2.35  (inspection-notebook formula: 3.19)  best epoch 11  58.9s
+
+>>> train appceleratorstudio -> test mulestudio  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  29.47  val MAE loss  31.96  test MAE  29.01
+  epoch  1  train MAE loss  18.49  val MAE loss   4.83  test MAE   6.40
+  epoch  2  train MAE loss   4.48  val MAE loss   1.69  test MAE   3.44
+  epoch  3  train MAE loss   3.49  val MAE loss   2.56  test MAE   3.86
+  epoch  4  train MAE loss   3.10  val MAE loss   1.90  test MAE   3.74
+  epoch  5  train MAE loss   3.09  val MAE loss   3.08  test MAE   4.09
+  epoch  6  train MAE loss   3.49  val MAE loss   2.30  test MAE   3.72
+  epoch  7  train MAE loss   2.90  val MAE loss   1.52  test MAE   3.42
+  epoch  8  train MAE loss   2.74  val MAE loss   1.46  test MAE   3.33
+  epoch  9  train MAE loss   2.87  val MAE loss   1.57  test MAE   3.47
+  epoch 10  train MAE loss   2.77  val MAE loss   2.31  test MAE   3.73
+  epoch 11  train MAE loss   2.84  val MAE loss   1.56  test MAE   3.37
+  epoch 12  train MAE loss   2.81  val MAE loss   1.65  test MAE   3.54
+  epoch 13  train MAE loss   2.86  val MAE loss   1.73  test MAE   3.45
+  epoch 14  train MAE loss   2.74  val MAE loss   1.91  test MAE   3.53
+  epoch 15  train MAE loss   2.73  val MAE loss   1.41  test MAE   3.31
+  epoch 16  train MAE loss   2.60  val MAE loss   1.51  test MAE   3.35
+  epoch 17  train MAE loss   2.56  val MAE loss   1.57  test MAE   3.38
+  epoch 18  train MAE loss   2.60  val MAE loss   1.45  test MAE   3.33
+  epoch 19  train MAE loss   2.57  val MAE loss   1.46  test MAE   3.33
+<<< MAE 3.31  MdAE 2.70  (inspection-notebook formula: 1.73)  best epoch 15  151.6s
+
+>>> train appceleratorstudio -> test mule  (seed 3)
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2 and are newly initialized: ['dense1.weight', 'dense2.weight', 'score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  epoch  0  train MAE loss  29.47  val MAE loss  31.96  test MAE  28.88
+  epoch  1  train MAE loss  18.49  val MAE loss   4.83  test MAE   5.19
+  epoch  2  train MAE loss   4.48  val MAE loss   1.69  test MAE   2.81
+  epoch  3  train MAE loss   3.49  val MAE loss   2.56  test MAE   3.38
+  epoch  4  train MAE loss   3.10  val MAE loss   1.90  test MAE   2.84
+  epoch  5  train MAE loss   3.09  val MAE loss   3.08  test MAE   3.69
+  epoch  6  train MAE loss   3.49  val MAE loss   2.30  test MAE   3.21
+  epoch  7  train MAE loss   2.90  val MAE loss   1.52  test MAE   2.68
+  epoch  8  train MAE loss   2.74  val MAE loss   1.46  test MAE   2.68
+  epoch  9  train MAE loss   2.87  val MAE loss   1.57  test MAE   2.71
+  epoch 10  train MAE loss   2.77  val MAE loss   2.31  test MAE   3.20
+  epoch 11  train MAE loss   2.84  val MAE loss   1.56  test MAE   2.74
+  epoch 12  train MAE loss   2.81  val MAE loss   1.65  test MAE   2.73
+  epoch 13  train MAE loss   2.86  val MAE loss   1.73  test MAE   2.83
+  epoch 14  train MAE loss   2.74  val MAE loss   1.91  test MAE   2.94
+  epoch 15  train MAE loss   2.73  val MAE loss   1.41  test MAE   2.63
+  epoch 16  train MAE loss   2.60  val MAE loss   1.51  test MAE   2.70
+  epoch 17  train MAE loss   2.56  val MAE loss   1.57  test MAE   2.73
+  epoch 18  train MAE loss   2.60  val MAE loss   1.45  test MAE   2.66
+  epoch 19  train MAE loss   2.57  val MAE loss   1.46  test MAE   2.67
+<<< MAE 2.63  MdAE 2.83  (inspection-notebook formula: 1.67)  best epoch 15  154.4s
+ALLDONE

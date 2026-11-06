@@ -1,0 +1,210 @@
+Total data: 829
+Training size: 497, validation size: 165, testing size: 165
+Total: 827
+Total data: 1166
+Training size: 699, validation size: 233, testing size: 233
+Total: 1165
+Total data: 2919
+Training size: 1751, validation size: 583, testing size: 583
+Total: 2917
+Total data: 3526
+Training size: 2115, validation size: 705, testing size: 705
+Total: 3525
+Total data: 889
+Training size: 533, validation size: 177, testing size: 177
+Total: 887
+Total data: 384
+Training size: 230, validation size: 76, testing size: 76
+Total: 382
+Total data: 4667
+Training size: 2800, validation size: 933, testing size: 933
+Total: 4666
+Total data: 521
+Training size: 312, validation size: 104, testing size: 104
+Total: 520
+Total data: 666
+Training size: 399, validation size: 133, testing size: 133
+Total: 665
+Total data: 482
+Training size: 289, validation size: 96, testing size: 96
+Total: 481
+Total data: 1680
+Training size: 1008, validation size: 336, testing size: 336
+Total: 1680
+Total data: 2251
+Training size: 1350, validation size: 450, testing size: 450
+Total: 2250
+Total data: 352
+Training size: 211, validation size: 70, testing size: 70
+Total: 351
+Total data: 732
+Training size: 439, validation size: 146, testing size: 146
+Total: 731
+ntrain, nvalid, ntest:  496 165 168
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/APSTUD_deep-se.pkl.gz
+ntrain, nvalid, ntest:  698 233 235
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/MDL_deep-se.pkl.gz
+ntrain, nvalid, ntest:  1750 583 586
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/TISTUD_deep-se.pkl.gz
+ntrain, nvalid, ntest:  2114 705 707
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/XD_deep-se.pkl.gz
+ntrain, nvalid, ntest:  532 177 180
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/MULE_deep-se.pkl.gz
+ntrain, nvalid, ntest:  229 76 79
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/CLOV_deep-se.pkl.gz
+ntrain, nvalid, ntest:  2799 933 935
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/DM_deep-se.pkl.gz
+ntrain, nvalid, ntest:  311 104 106
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/BAM_deep-se.pkl.gz
+ntrain, nvalid, ntest:  398 133 135
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/DURACLOUD_deep-se.pkl.gz
+ntrain, nvalid, ntest:  288 96 98
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/USERGRID_deep-se.pkl.gz
+ntrain, nvalid, ntest:  1007 336 337
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/MESOS_deep-se.pkl.gz
+ntrain, nvalid, ntest:  1349 450 452
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/TIMOB_deep-se.pkl.gz
+ntrain, nvalid, ntest:  210 70 72
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/JRESERVER_deep-se.pkl.gz
+ntrain, nvalid, ntest:  438 146 148
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/MULESTUDIO_deep-se.pkl.gz
+APSTUD Appcelerator
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project APSTUD_deep-se
+MDL Moodle
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project MDL_deep-se
+TISTUD Appcelerator
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project TISTUD_deep-se
+XD Spring
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project XD_deep-se
+MULE Mulesoft
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project MULE_deep-se
+CLOV Atlassian
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project CLOV_deep-se
+DM Lsstcorp
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project DM_deep-se
+BAM Atlassian
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project BAM_deep-se
+DURACLOUD Duraspace
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project DURACLOUD_deep-se
+USERGRID Apache
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project USERGRID_deep-se
+MESOS Apache
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project MESOS_deep-se
+TIMOB Appcelerator
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project TIMOB_deep-se
+JRESERVER Atlassian
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project JRESERVER_deep-se
+MULESTUDIO Mulesoft
+python divide_data_sortdate.py -path ../../datasets/Choet_Dataset/ -project MULESTUDIO_deep-se
+APSTUD Appcelerator
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project APSTUD_deep-se -repo Appcelerator
+MDL Moodle
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project MDL_deep-se -repo Moodle
+TISTUD Appcelerator
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project TISTUD_deep-se -repo Appcelerator
+XD Spring
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project XD_deep-se -repo Spring
+MULE Mulesoft
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project MULE_deep-se -repo Mulesoft
+CLOV Atlassian
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project CLOV_deep-se -repo Atlassian
+DM Lsstcorp
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project DM_deep-se -repo Lsstcorp
+BAM Atlassian
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project BAM_deep-se -repo Atlassian
+DURACLOUD Duraspace
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project DURACLOUD_deep-se -repo Duraspace
+USERGRID Apache
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project USERGRID_deep-se -repo Apache
+MESOS Apache
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project MESOS_deep-se -repo Apache
+TIMOB Appcelerator
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project TIMOB_deep-se -repo Appcelerator
+JRESERVER Atlassian
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project JRESERVER_deep-se -repo Atlassian
+MULESTUDIO Mulesoft
+python preprocess_storypoint.py -path ../../datasets/Choet_Dataset/ -project MULESTUDIO_deep-se -repo Mulesoft

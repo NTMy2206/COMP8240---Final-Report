@@ -1,0 +1,97 @@
+number of datapoints: 50000
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 198015
+6411382  total words,  8828 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+len 0:  0 15234
+len 0:  1 4580
+len 0:  1 11400
+saved the output at files/Apache.pkl.gz
+saved the output at files/Apache.dict.pkl.gz
+number of datapoints: 32868
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 103653
+4280738  total words,  5934 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+len 0:  0 12206
+len 0:  0 17076
+len 0:  0 19968
+len 0:  1 6133
+len 0:  1 9618
+saved the output at files/Appcelerator.pkl.gz
+saved the output at files/Appcelerator.dict.pkl.gz
+number of datapoints: 9401
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 32557
+750533  total words,  2145 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/Duraspace.pkl.gz
+saved the output at files/Duraspace.dict.pkl.gz
+number of datapoints: 50000
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 119593
+5060135  total words,  6690 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+len 0:  0 14285
+saved the output at files/Atlassian.pkl.gz
+saved the output at files/Atlassian.dict.pkl.gz
+number of datapoints: 51556
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 80305
+4595070  total words,  5306 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+len 0:  0 22613
+saved the output at files/Moodle.pkl.gz
+saved the output at files/Moodle.dict.pkl.gz
+number of datapoints: 2452
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 13582
+206500  total words,  798 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/Lsstcorp.pkl.gz
+saved the output at files/Lsstcorp.dict.pkl.gz
+number of datapoints: 8035
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 29082
+626122  total words,  1621 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+saved the output at files/Mulesoft.pkl.gz
+saved the output at files/Mulesoft.dict.pkl.gz
+number of datapoints: 48650
+Tokenizing.. Done
+Building dictionary..
+number of words in dictionary: 160099
+4678329  total words,  6875 words with frequency >= 30
+Tokenizing.. Done
+Tokenizing.. Done
+len 0:  0 20629
+len 0:  0 25788
+len 0:  1 5632
+saved the output at files/Spring.pkl.gz
+saved the output at files/Spring.dict.pkl.gz
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Apache
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Appcelerator
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Duraspace
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Atlassian
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Moodle
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Lsstcorp
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Mulesoft
+python preprocess_pretrain.py -path ../../datasets/Pretrain_Dataset/ -repo Spring
+skipping DNNSoftware (csv not present)
+skipping Hyperledger (csv not present)
+skipping MongoDB (csv not present)
+skipping Sonatype (csv not present)

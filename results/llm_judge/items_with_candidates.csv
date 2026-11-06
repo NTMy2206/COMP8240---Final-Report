@@ -1,0 +1,101 @@
+item_id,issuekey,issuetype,title,part,storypoint,gpt2sp_raw,median_pred,gpt2sp,median,recorded
+1,MDL-87555,Bug,"[enrol_fee] Enrollment expiry action ""Unenroll user from course"" does not unenroll user, only sets them to ""Not active""",A,2,1.1121992,2.0,1,2,2
+2,MDL-87759,New Feature,Integrate and optimise React build code into core,A,3,3.3730097,2.0,3,2,3
+3,MDL-89338,Bug,Drawer expand/collapse icons appear to point in the wrong direction,A,1,1.4434028,2.0,1,2,1
+4,MDL-87638,Bug,Moving feedback questions is not working on 4.5,A,1,1.2934015,2.0,1,2,1
+5,MDL-89063,Task,Tracker description templates discovery,A,2,3.1622958,2.0,3,2,2
+6,MDL-89028,Task,"PR only - [MDL-88878] - aiprovider_openai: json_encode() escapes slashes in model name, causing 404 with OpenAI-compatible providers",A,1,0.5862804,2.0,1,2,1
+7,MDL-89404,Task,PR only: MDL-88618 - TinyMCE: enable Accordion and List Styles (advlist) bundled open-source plugins,A,1,0.8223944,2.0,1,2,1
+8,MDL-88886,Improvement,Backup file_logger should store relative paths,A,2,0.7882613,2.0,1,2,2
+9,MDL-89822,Task,PR only: MDL-89613 - Preview Images are not loaded in repository wikimedia,A,1,0.7892973,2.0,1,2,1
+10,MDL-87546,Improvement,Authentication: Update login page design,A,10,2.6043394,2.0,3,2,10
+11,MDL-87388,Task,PR only: MDL-86714 - 404 error being displayed on a restored SCORM activity,A,1,0.7160435,2.0,1,2,1
+12,MDL-88629,Improvement,Navigation footer: Add exceptions for the Glossary linear navigation,A,2,2.732474,2.0,3,2,2
+13,MDL-87279,Improvement,Subsections: Remove description from settings page,A,1,1.3923718,2.0,1,2,1
+14,MDL-89068,Improvement,Feedback: Replace text navigation in show responses view with icon pagination and sticky footer,A,2,1.2870352,2.0,1,2,2
+15,MDL-87789,Bug,Fix bug in lib/lti1p3 causing omitted line item properties to be sent as nulls during deep linking return,A,1,0.6939732,2.0,1,2,1
+16,MDL-88948,Bug,Course index accessibility issues,A,1,1.504365,2.0,2,2,1
+17,MDL-88526,Task,[2026 Sprint 2.0] CIPs task: TPI-43  - General Support task,A,6,1.4970242,2.0,1,2,6
+18,MDL-89970,Task,"PR only: [MDL-89757] Site registration ""activeusers"" is measured against the previous login, so it systematically undercounts",A,1,0.8633255,2.0,1,2,1
+19,MDL-89207,Bug,Expanding and collapsing accordions in forms can result in wrong expanded state,A,5,1.2110276,2.0,1,2,5
+20,MDL-88401,Improvement,AI - Accessibility-Labels for Copy buttons and Regenerate not sufficiently descriptive,A,1,1.5844291,2.0,2,2,1
+21,MDL-89153,Bug,Navigation footer displays oversized completion badge,A,1,1.7957942,2.0,2,2,1
+22,MDL-87950,Improvement,Provide third-party libraries via Composer,A,3,2.5061183,2.0,3,2,3
+23,MDL-87099,Task,PR only: [MDL-87066] - Create clean_string() to simplify and improve Mustache rendering security,A,2,0.9169799,2.0,1,2,2
+24,MDL-88327,Task,PR only: MDL-86712 - Font weight for headers have gone from 700 to 500 during the switch to ≥ 5.0,A,1,0.73649687,2.0,1,2,1
+25,MDL-87953,Task,PR only: MDL-85236 - Avoid errors when logging into oauth with stale sesskey,A,2,0.6247122,2.0,1,2,2
+26,MDL-87163,Task,PR only: MDL-86846 - Use native button element for the core/drag_handle template,A,1,0.7009276,2.0,1,2,1
+27,MDL-86953,Bug,Mobile view - Long title in a block breaks the block editing (three dots) menu,A,1,1.103868,2.0,1,2,1
+28,MDL-89294,New Feature,React: Migrate top navigation to Design System component,A,6,3.2816796,2.0,3,2,6
+29,MDL-89306,Bug,"Changing date field on registration page, redirects to frontpage",A,1,1.2485231,2.0,1,2,1
+30,MDL-88842,Improvement,Generate development and production outputs for ESM code,A,2,1.9832722,2.0,2,2,2
+31,MDL-87881,Improvement,Add behat tests to restricted but visible activities,A,2,1.8323413,2.0,2,2,2
+32,MDL-86934,New Feature,Improve visibility and auditability of risks with roles,A,2,2.676569,2.0,3,2,2
+33,MDL-87575,Improvement,Navigation footer: Implement a mechanism to add exceptions and implement them for the Assignment pages,A,5,2.5966136,2.0,3,2,5
+34,MDL-88855,Task,Create Bandicoots team AI charter,A,2,3.6795967,2.0,4,2,2
+35,MDL-89310,Task,PR only: [MDL-88683] Themes: Manage Site blogs Boost,A,1,0.995119,2.0,1,2,1
+36,MDL-87311,Task,LTI Asset Processor Technical Discovery: View Report Workflow (Spec & Extensions),A,1,2.4435742,2.0,2,2,1
+37,MDL-87228,Improvement,Add more options for automatic locking of an individual forum discussion after a period of inactivity,A,1,1.8311266,2.0,2,2,1
+38,MDL-87574,Improvement,Routing: Handle behaviour for restricted sections,A,3,2.0190258,2.0,2,2,3
+39,MDL-88400,Bug,Importing materials from a course with a long shortname does not work.,A,2,2.0930724,2.0,2,2,2
+40,MDL-87694,Bug,Page header heading missing when accessing the course participant profile page as guest user,A,1,1.4079521,2.0,1,2,1
+41,MDL-87929,Improvement,Restricted page: Display the availability conditions expanded,B,2,1.3986965,2.0,1,2,2
+42,MDL-88410,Improvement,Move the expand/collapse all out of General section,B,1,1.6595479,2.0,2,2,1
+43,MDL-88907,Task,PR only - [MDL-88772] - AI: The Summarize Prompt Includes the Explain Response and Vice Versa,B,1,0.8690801,2.0,1,2,1
+44,MDL-88912,Task,PR only: MDL-82514 - Calendar missing entries when resetting dropdown filter,B,1,0.99001825,2.0,1,2,1
+45,MDL-87454,Task,PR only: MDL-82439 - Antivirus email sending errors are shown to users,B,1,0.97034293,2.0,1,2,1
+46,MDL-87081,Task,PR only: MDL-86999 - The custom course fields table lost the stripe and the hover effect from Moodle 4.5,B,1,0.648093,2.0,1,2,1
+47,MDL-89844,Task,LTI 1EDTech certification for Moodle 5.3 and other supported versions,B,1,1.5289009,2.0,2,2,1
+48,MDL-87955,Bug,Accessibility issues on the forum's Manage subscribers page,B,1,1.7175099,2.0,2,2,1
+49,MDL-88178,Task,Sprint 1.2 2026: IR issues by Huong,B,2,0.8240839,2.0,1,2,2
+50,MDL-89100,Task,"Random failure on ""test_set_scheduled_task_nextruntime""",B,2,1.6488636,2.0,2,2,2
+51,MDL-88480,Task,PR only: [MDL-88133] Server file repository double encodes file listing when browsing repositories,B,1,0.9141212,2.0,1,2,1
+52,MDL-87690,Improvement,Convert Entity Custom Field Category to Shared Category,B,1,2.6320462,2.0,3,2,1
+53,MDL-88922,Bug,Performance regression after implementing MDL-60912,B,2,1.5075679,2.0,2,2,2
+54,MDL-89333,Task,PR only: MDL-87373 - BigBlueButton: Enable activity by default for new installs,B,1,0.8038026,2.0,1,2,1
+55,MDL-89088,New Feature,Implement REST API token entity and repository layer,B,3,3.8237743,2.0,4,2,3
+56,MDL-89427,Task,PR only - [MDL-89270] - TinyMCE: Add support for managing font family and font size,B,1,0.45621902,2.0,1,2,1
+57,MDL-87712,Improvement,Aesthetics: Implement redesigned dates in activity page,B,3,1.4313712,2.0,1,2,3
+58,MDL-88552,Improvement,Generate types for existing AMD code,B,3,2.23098,2.0,2,2,3
+59,MDL-89601,Task,Upgrade PHP DI Invoker to 2.3.7,B,1,1.0961974,2.0,1,2,1
+60,MDL-90115,Task,PR only: [MDL-89803] - Wrong end date when unchecking Enable checkbox,B,1,0.60779834,2.0,1,2,1
+61,MDL-88432,Bug,Single quotes in search query return no results on MSSQL (non full-text fallback path),B,2,0.95342046,2.0,1,2,2
+62,MDL-87717,Improvement,Update environment.xml tests to understand that composer may be installed in the parent directory,B,3,1.2281923,2.0,1,2,3
+63,MDL-87600,Bug,Skipped heading levels accessibility issue on user Grades and Preferences pages,B,2,2.005251,2.0,2,2,2
+64,MDL-87283,Improvement,New restricted page for restricted modules with visible restrictions for the user,B,5,1.6332351,2.0,2,2,5
+65,MDL-89114,Task,PR only - [MDL-70346] - Unable to disable date_selector inside a form group,B,1,0.72992235,2.0,1,2,1
+66,MDL-88962,Bug,Course Home edit mode: No status message when moving sections (WCAG 4.1.3),B,1,1.6121294,2.0,2,2,1
+67,MDL-87836,Improvement,Change the icons for notifications and messages,B,1,2.0234973,2.0,2,2,1
+68,MDL-87350,Improvement,MoodleNet - Remove outbound sharing,B,2,1.9236324,2.0,2,2,2
+69,MDL-88528,Bug,Logo image breaks main menu on small screens (mobile),B,1,1.8368015,2.0,2,2,1
+70,MDL-88456,Task,Add Moodle 5.2.0 upgrade line to all the upgrade.php scripts,B,1,1.3502676,2.0,1,2,1
+71,MDL-87093,Task,Investigate observer impact and improve mitigations,B,5,3.526988,2.0,4,2,5
+72,MDL-88455,Task,Bump backup internal version and release information for the 5.3 branch,B,1,0.93149126,2.0,1,2,1
+73,MDL-88429,Task,PR only: MDL-83815 - Unable to Remove Forum Rating or Set to None (Null),B,1,0.78208923,2.0,1,2,1
+74,MDL-88634,Improvement,Navigation footer: Add exceptions for the SCORM linear navigation,B,2,2.8697424,2.0,3,2,2
+75,MDL-87834,Improvement,Place global search field inline in top navigation,B,2,2.444975,2.0,2,2,2
+76,MDL-88409,Improvement,Improve the block drawer,B,1,2.072868,2.0,2,2,1
+77,MDL-89403,Task,PR only: MDL-89098 - Theme: Custom login page image does not center like the default image,B,1,0.87959677,2.0,1,2,1
+78,MDL-90137,Task,PR only: [MDL-89786] - address_in_subnet() fails to match IPv6 addresses ending in `::`,B,1,0.8223815,2.0,1,2,1
+79,MDL-89239,Task,PR only: MDL-87016 - Prepend fake subplugins to ensure consistent test overrides,B,1,1.2368891,2.0,1,2,1
+80,MDL-86978,Task,PR only: MDL-86915 - Missing string in Plugin privacy compliance registry,B,1,1.1865287,2.0,1,2,1
+81,MDL-87624,Bug,TypeError when trying to use \core\route\require_login for courseless login checks,B,1,0.96088845,2.0,1,2,1
+82,MDL-88604,Improvement,Navigation footer: Implement linear navigation exceptions for Previous/Next,B,2,1.6423635,2.0,2,2,2
+83,MDL-89533,Task,PR only - [MDL-89441] - Bump to Behat 3.32.x and PHPUnit 11.5.x,B,1,1.1184112,2.0,1,2,1
+84,MDL-89241,Task,Import changed English (fixes) (en_fix) strings into the English language pack for 5.2.2 and 5.3,B,2,1.5807502,2.0,2,2,2
+85,MDL-88579,Improvement,Extend the  `moodle_exception` constructor to accept the `?\Throwable $previous` and pass this to the parent,B,1,1.3254073,2.0,1,2,1
+86,MDL-87623,Improvement,Subsections: Implement redesigned subsection display,B,2,2.558497,2.0,3,2,2
+87,MDL-86851,Task,[2025 Planning Sprint 4] CIPs task: TPI-52 - Plugin Review,B,6,3.2067013,2.0,3,2,6
+88,MDL-89933,Bug,$CFG->nosmsever has no effect because should_send_sms() does not declare global $CFG,B,2,0.82964474,2.0,1,2,2
+89,MDL-89902,Bug,Secondary navigation not updating URL anchors,B,6,1.4228923,2.0,1,2,6
+90,MDL-86832,Improvement,Remove the activities block (take 2),B,2,1.908663,2.0,2,2,2
+91,MDL-89868,Bug,Course index section links still point at the old positions after a section is moved,B,6,1.0196028,2.0,1,2,6
+92,MDL-87548,Bug,Uploading image from Wikimedia fails on certain images,B,2,1.1738458,2.0,1,2,2
+93,MDL-88006,Bug,AI responses need line breaks corrected,B,1,1.6372335,2.0,2,2,1
+94,MDL-89151,Bug,Navigation footer displays redundant pipe separator when completion data is absent,B,1,1.2094519,2.0,1,2,1
+95,MDL-89496,Bug,Section content template is not backward compatible,B,2,1.2574782,2.0,1,2,2
+96,MDL-88635,Improvement,Navigation footer: Add exceptions for the Wiki linear navigation,B,2,2.5516944,2.0,3,2,2
+97,MDL-89422,Bug,"Undefined constant ""mod_resource\completion\RESOURCELIB_DISPLAY_NEW"" in resource overview page",B,2,1.0285921,2.0,1,2,2
+98,MDL-87256,Task,PR only: [MDL-73396] Oauth2 links suspended user when there is a few users with same email,B,1,0.7394197,2.0,1,2,1
+99,MDL-88771,Task,PR only: [MDL-85256] - Inbound E-Mail MIME Parsing Issues,B,1,1.0119681,2.0,1,2,1
+100,MDL-89574,Bug,Add an activity dialogue is not styled correctly,B,1,1.7405937,2.0,2,2,1

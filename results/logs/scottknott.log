@@ -1,0 +1,10 @@
+                 project method rank      mae  n
+63 ALL (per-project MAE) Median    1 2.668914 14
+64 ALL (per-project MAE) DeepSE    1 2.757408 14
+65 ALL (per-project MAE) GPT2SP    1 2.973427 14
+66 ALL (per-project MAE)   Mean    2 3.559401 14
+
+Rank-1 methods per project:
+
+DeepSE GPT2SP   Mean Median 
+    13     15      6     15 

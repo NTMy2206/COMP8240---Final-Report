@@ -1,0 +1,70 @@
+{
+  "model": [
+    "claude-sonnet-5-5"
+  ],
+  "calls": 1932,
+  "unparsed": 0,
+  "cost_usd_list_price": 11.9,
+  "estimate_mae": {
+    "LLM judge, rep 1": 1.65,
+    "LLM judge, rep 2": 1.7,
+    "LLM judge, rep 3": 1.73,
+    "LLM judge, median of reps": 1.71,
+    "GPT2SP seed 1 (raw)": 0.864,
+    "GPT2SP seed 1 (rounded)": 0.81,
+    "Median baseline": 1.0
+  },
+  "estimate_alpha_interval_reps": 0.9748088827400273,
+  "estimate_exact_same_all_reps": 0.9,
+  "estimate_spearman_with_recorded": 0.579550390638795,
+  "estimate_distribution": {
+    "1.0": 3,
+    "2.0": 36,
+    "3.0": 34,
+    "5.0": 22,
+    "6.0": 3,
+    "10.0": 2
+  },
+  "pointwise": {
+    "v1/gpt2sp": [
+      2.74,
+      0.52
+    ],
+    "v1/median": [
+      2.98,
+      0.65
+    ],
+    "v1/recorded": [
+      2.75,
+      0.58
+    ],
+    "v2/gpt2sp": [
+      2.61,
+      0.51
+    ],
+    "v2/median": [
+      2.92,
+      0.63
+    ],
+    "v2/recorded": [
+      2.65,
+      0.54
+    ]
+  },
+  "validity_spearman_score_vs_abs_error_v1": -0.0031880771859908535,
+  "validity_spearman_score_vs_abs_error_v1_excl_recorded": -0.08301317832460545,
+  "pointwise_alpha_ordinal_reps_v1": 0.9096010579410906,
+  "pointwise_exact_same_all_reps_v1": 0.7633333333333333,
+  "prompt_sensitivity_spearman_v1_v2": 0.831715388850808,
+  "prompt_sensitivity_exact_v1_v2": 0.7333333333333333,
+  "prompt_sensitivity_mean_v1_minus_v2": 0.11666666666666667,
+  "recorded_rated_at_least_as_high_as_gpt2sp": 0.75,
+  "recorded_rated_at_least_as_high_as_median": 0.56,
+  "pairwise_items": 72,
+  "pairwise_order_consistency": 0.8472222222222222,
+  "pairwise_first_position_rate": 0.4791666666666667,
+  "pairwise_prefers_gpt2sp_when_consistent": 0.39344262295081966,
+  "pairwise_closer_is_gpt2sp_share": 0.6338028169014085,
+  "pairwise_agrees_with_recorded_when_consistent": 0.5111111111111111,
+  "pairwise_n_consistent_nontie": 180
+}

@@ -1,0 +1,96 @@
+diff -ru -x *.pyc upstream/Deep-SE/NCE/exp_lstm2v.py Deep-SE/NCE/exp_lstm2v.py
+--- upstream/Deep-SE/NCE/exp_lstm2v.py	2026-11-03 22:37:21
++++ Deep-SE/NCE/exp_lstm2v.py	2026-11-03 22:42:22
+@@ -1,6 +1,9 @@
+ import os
++import sys  # [PATCH replication]
+ 
+ mode = 'lstm2vec'  # 'lstm2vec' for lstm 2 vector and 'pretrain' for pretraining
++if len(sys.argv) > 1:  # [PATCH replication] e.g. `python exp_lstm2v.py lstm2vec Choet_Dataset`
++    mode = sys.argv[1]
+ 
+ Choet_Dataset = {
+     'MESOS': 'Apache',
+@@ -72,6 +75,8 @@
+ ]
+ 
+ datasetDict = Choet_Dataset  # Choet_Dataset | Tawosi_Dataset | Porru_Dataset | Pretrain_Dataset
++if len(sys.argv) > 2:  # [PATCH replication]
++    datasetDict = globals()[sys.argv[2]]
+ 
+ dims = ['50']
+ maxlen = '100'
+diff -ru -x *.pyc upstream/Deep-SE/NCE/lstm2vec.py Deep-SE/NCE/lstm2vec.py
+--- upstream/Deep-SE/NCE/lstm2vec.py	2026-11-03 22:37:21
++++ Deep-SE/NCE/lstm2vec.py	2026-11-03 22:42:22
+@@ -8,7 +8,7 @@
+ arg = load_data.arg_passing(sys.argv)
+ emb_dim = arg['-dim']
+ data_pretrain = 'lstm2v_' + arg['-dataPre'] + '_dim' + str(emb_dim)
+-dataset = '../data/' + arg['-data'] + '.pkl.gz'
++dataset = '../data/files/' + arg['-data'] + '.pkl.gz'  # [PATCH replication] was '../data/' (data module writes to data/files/)
+ saving = arg['-saving']
+ max_len = arg['-len']
+ 
+diff -ru -x *.pyc upstream/Deep-SE/classification/create_model.py Deep-SE/classification/create_model.py
+--- upstream/Deep-SE/classification/create_model.py	2026-11-03 22:37:21
++++ Deep-SE/classification/create_model.py	2026-11-03 22:42:22
+@@ -119,6 +119,12 @@
+             raw.write(str(i))
+             raw.write('\n')
+         raw.close()
++        # [PATCH replication] also save actual + predicted story points for every test issue (full precision)
++        pred_f = open(expName + '/log/ar/pred_' + fileResult, 'w')
++        pred_f.write('actual,predicted\n')
++        for a, e in zip(actual, estimate[:, 0]):
++            pred_f.write('%r,%r\n' % (float(a), float(e)))
++        pred_f.close()
+ 
+     def write_mre(self, expName, fileResult, actual, estimate):
+         if not os.path.exists(expName + '/log/mre/'):
+diff -ru -x *.pyc upstream/Deep-SE/classification/exp_script.py Deep-SE/classification/exp_script.py
+--- upstream/Deep-SE/classification/exp_script.py	2026-11-03 22:37:21
++++ Deep-SE/classification/exp_script.py	2026-11-03 22:42:22
+@@ -1,4 +1,5 @@
+ import os
++import sys  # [PATCH replication]
+ 
+ Choet_dataset = {
+     'MESOS': 'Apache',
+@@ -56,6 +57,10 @@
+ 
+ datasetDict = Choet_dataset # Tawosi_dataset | Prrru_dataset
+ exp = 'rq1_1'
++if len(sys.argv) > 1:  # [PATCH replication] `python exp_script.py <exp> [PROJECT ...]`
++    exp = sys.argv[1]
++if len(sys.argv) > 2:  # [PATCH replication] restrict to a subset of projects (same settings)
++    datasetDict = dict((p, datasetDict[p]) for p in sys.argv[2:])
+ 
+ model = 'seq'
+ dims = ['50']  #all parameters are set based on the tuning performed by Choetkiertikul et al. and reported in the original study
+diff -ru -x *.pyc upstream/Deep-SE/data/run_script.py Deep-SE/data/run_script.py
+--- upstream/Deep-SE/data/run_script.py	2026-11-03 22:37:21
++++ Deep-SE/data/run_script.py	2026-11-03 22:42:22
+@@ -1,4 +1,5 @@
+ import os
++import sys  # [PATCH replication] dataset selectable on the command line
+ 
+ Choet_Dataset = {
+     'MESOS': 'Apache',
+@@ -71,11 +72,16 @@
+ ]
+ 
+ datasetDict_ = 'Porru_Dataset'  # 'Choet_Dataset' | 'Tawosi_Dataset' | 'Porru_Dataset' | 'Pretrain_Dataset'
++if len(sys.argv) > 1:  # [PATCH replication] e.g. `python run_script.py Choet_Dataset`
++    datasetDict_ = sys.argv[1]
+ data_path = '../../datasets/' + datasetDict_ + '/'
+ 
+ if datasetDict_ == 'Pretrain_Dataset':
+     # Preprocess pre-train data: load, divide, and build dictionary and produce pickled data ready for pre-training
+     for dataPre in dataPres:
++        if not os.path.isfile(data_path + dataPre + '.csv'):  # [PATCH replication] only the 8 repos Choet needs are vendored
++            print 'skipping ' + dataPre + ' (csv not present)'
++            continue
+         cmd = 'python preprocess_pretrain.py -path ' + data_path + ' -repo ' + dataPre
+         print cmd
+         os.system(cmd)

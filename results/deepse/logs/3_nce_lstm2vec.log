@@ -1,0 +1,84 @@
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_APSTUD_deep-se_Appcelerator_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_MDL_deep-se_Moodle_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_TISTUD_deep-se_Appcelerator_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_XD_deep-se_Spring_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  1600
+saved the output at data/lstm2v_MULE_deep-se_Mulesoft_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_CLOV_deep-se_Atlassian_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  800
+saved the output at data/lstm2v_DM_deep-se_Lsstcorp_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_BAM_deep-se_Atlassian_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_DURACLOUD_deep-se_Duraspace_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_USERGRID_deep-se_Apache_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_MESOS_deep-se_Apache_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_TIMOB_deep-se_Appcelerator_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  5000
+saved the output at data/lstm2v_JRESERVER_deep-se_Atlassian_dim50.pkl.gz
+Using Theano backend.
+/usr/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+vocab:  1600
+saved the output at data/lstm2v_MULESTUDIO_deep-se_Mulesoft_dim50.pkl.gz
+python lstm2vec.py -dataPre Appcelerator -data APSTUD_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_APSTUD_deep-se_Appcelerator_dim50
+python lstm2vec.py -dataPre Moodle -data MDL_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_MDL_deep-se_Moodle_dim50
+python lstm2vec.py -dataPre Appcelerator -data TISTUD_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_TISTUD_deep-se_Appcelerator_dim50
+python lstm2vec.py -dataPre Spring -data XD_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_XD_deep-se_Spring_dim50
+python lstm2vec.py -dataPre Mulesoft -data MULE_deep-se -vocab 1600 -dim 50 -len 100 -saving lstm2v_MULE_deep-se_Mulesoft_dim50
+python lstm2vec.py -dataPre Atlassian -data CLOV_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_CLOV_deep-se_Atlassian_dim50
+python lstm2vec.py -dataPre Lsstcorp -data DM_deep-se -vocab 800 -dim 50 -len 100 -saving lstm2v_DM_deep-se_Lsstcorp_dim50
+python lstm2vec.py -dataPre Atlassian -data BAM_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_BAM_deep-se_Atlassian_dim50
+python lstm2vec.py -dataPre Duraspace -data DURACLOUD_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_DURACLOUD_deep-se_Duraspace_dim50
+python lstm2vec.py -dataPre Apache -data USERGRID_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_USERGRID_deep-se_Apache_dim50
+python lstm2vec.py -dataPre Apache -data MESOS_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_MESOS_deep-se_Apache_dim50
+python lstm2vec.py -dataPre Appcelerator -data TIMOB_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_TIMOB_deep-se_Appcelerator_dim50
+python lstm2vec.py -dataPre Atlassian -data JRESERVER_deep-se -vocab 5000 -dim 50 -len 100 -saving lstm2v_JRESERVER_deep-se_Atlassian_dim50
+python lstm2vec.py -dataPre Mulesoft -data MULESTUDIO_deep-se -vocab 1600 -dim 50 -len 100 -saving lstm2v_MULESTUDIO_deep-se_Mulesoft_dim50

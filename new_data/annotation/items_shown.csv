@@ -1,0 +1,1004 @@
+item_id,issuekey,issuetype,title,description_shown,part
+1,MDL-87555,Bug,"[enrol_fee] Enrollment expiry action ""Unenroll user from course"" does not unenroll user, only sets them to ""Not active""","# Create a new instance of Enrollment on Payment with a valid payment method configured.
+# In the Enrollment on Payment site settings, set the Enrollment expiry action to ""Unenroll user from course""
+## !image-20251226-181510.png|width=623,alt=""image-20251226-181510.png""!
+# In a test course, add the Enrollment on Payment enrollment method. Use a short enrollment duration for testing purposes.
+# As a test user, enroll in that course with the above method.
+
+Expected: When the enrollment expires, the user will be unenrolled from the course
+
+Observed: The user is listed as “Not active” but still shows on the participants list.",A
+2,MDL-87759,New Feature,Integrate and optimise React build code into core,"We have done our discovery work on adding react into core. This issue is for reviewing the code on [https://moodle.atlassian.net/browse/AE-81|https://moodle.atlassian.net/browse/AE-81|smart-link] and make sure that it adheres to Moodle coding guidelines, makes improvements where possible, and does not cause any regressions
+One of the completion criteria is ensuring that developer documentation is provide. 
+
+When working through this issue, please consider:
+
+* Identify code that is no longer needed
+* Remove any experimental scaffolding
+* Simplify any code that we put in to produce a working result
+* Challenge if each part is needed
+* Reduce complexity if possible
+
+*Merge plan*
+
+This issue introduces Esbuild as the build system for React code in Moodle. The primary architectural decision is the introduction of a dedicated {{js/react/}} directory, keeping React logic physically and logically separate from legacy AMD code.
+
+*Dedicated Source Organisation*
+
+React source files are located in {{js/react/src/}} rather than {{amd/src/}} because they are native ES modules and are not processed through Moodle’s AMD pipeline.
+
+* *Location:* {{[plugin]/js/react/src/ }}(additional subdirectories may be defined beneath src/ as needed)
+* This separation clearly distinguishes React-based code from AMD modules and prevents existing Grunt/Shifter tasks from attempting to process files they do not support.
+
+*Output Format and Build Integration*
+
+While the code lives in a new folder, *Esbuild* is [...text cut here]",A
+3,MDL-89338,Bug,Drawer expand/collapse icons appear to point in the wrong direction,"HN updated 28/08/2026:
+
+* Revert icon changes in [https://moodle.atlassian.net/browse/MDL-88409|https://moodle.atlassian.net/browse/MDL-88409|smart-link] 
+* Revert icon states in [https://moodle.atlassian.net/browse/MDL-89049|https://moodle.atlassian.net/browse/MDL-89049|smart-link] 
+
+-The open/close course index icons seems like they are flipped the wrong way around. There’s multiple ways these icons could be interpreted, so depending which we are aiming for, it seems like either some or all icons need flipping in some way:-
+
+*-Option 1 - the arrow should points in the direction the drawer will move when it is clicked-*
+
+-If this is the intent, the action buttons for left and right drawers are facing the wrong way. The below screenshot shows the arrow pointing left, when the closing course index slides to the right.-
+
+!image-20260803-105708.png|width=686,alt=""image-20260803-105708.png""!
+
+*-Option 2 - the “larger” section of the icon (with the arrow) is meant to represent the movement of the main page content-*
+
+-If this is the intent, the “larger” section should always be the closest to the middle of the page (as per the above screenshot), but this is not the case when either drawer is closed:-
+
+!image-20260803-111111.png|width=686,alt=""image-20260803-111111.png""!
+
+*-My opinion-*
+
+-Given the icons live in the drawers, and perform actions to expand or collapse the drawers, I think it is most intuitive for option 1 to be the case - where the arrow on the icon should point “out [...text cut here]",A
+4,MDL-87638,Bug,Moving feedback questions is not working on 4.5,"To reproduce:
+
+# Log in as an editing teacher and create a feedback activity in a course.
+# Add at least three questions to the feedback activity.
+# Move the first question after the last question. Visually, the question changes position.
+# Reload the page
+# Expected: The first question should now be after the third question.
+# Actual: The first question’s position did not change at all.",A
+5,MDL-89063,Task,Tracker description templates discovery,"Description templates will be a really useful method to ensure we have consistent and complete information when triaging and working on issues (as well as providing a consistent format for LLM parsing). Before we can work on the structure and contents of any templates though, we first need to understand what the possible methods are for us to deliver/serve them in the issue creation process. For example, what else is possible within our current creation process, what other options are available (such as the types of forms some other departments have used), and in all cases, what limitations or features are present that might help set the scope of what we can implement.",A
+6,MDL-89028,Task,"PR only - [MDL-88878] - aiprovider_openai: json_encode() escapes slashes in model name, causing 404 with OpenAI-compatible providers",This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-88878|https://moodle.atlassian.net/browse/MDL-88878|smart-link]. Please see that issue for full details about this issue and any peer review comments.,A
+7,MDL-89404,Task,PR only: MDL-88618 - TinyMCE: enable Accordion and List Styles (advlist) bundled open-source plugins,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-88618|https://moodle.atlassian.net/browse/MDL-88618|smart-link]  Please see that issue for full details about this issue and any peer review comments.,A
+8,MDL-88886,Improvement,Backup file_logger should store relative paths,"h2. Summary
+
+Backup {{file_logger}} should serialize a relative path (just the filename) rather than the absolute {{$CFG->backuptempdir/$backupid.log}}. 
+
+The absolute path is host specific and ends up baked into the backup controller record and into the {{.mbz}} artefact, which makes backups non portable and causes restore code to blindly open whatever path was deserialized. Storing a relative path and rebuilding the full path on the fly using the current {{$CFG->backuptempdir}} fixes both.
+
+h2. Background
+
+This came out of [https://moodle.atlassian.net/browse/MDL-76288|https://moodle.atlassian.net/browse/MDL-76288|smart-link], which fixed {{backup_cleanup_task}} crashing when {{$CFG->backuptempdir}} had changed since the controller was serialised. {{file_logger::__wakeup}} now needs to also handle relative paths, this ticket adds that read-side support alongside switching the writer to produce relative paths.",A
+9,MDL-89822,Task,PR only: MDL-89613 - Preview Images are not loaded in repository wikimedia,PR only: MDL-89613 - Preview Images are not loaded in repository wikimedia,A
+10,MDL-87546,Improvement,Authentication: Update login page design,"Update the user login page to provide a more modern and appealing web application feel. With less white space and improved UX.
+
+See  designs for this work and mock ups attached",A
+11,MDL-87388,Task,PR only: MDL-86714 - 404 error being displayed on a restored SCORM activity,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-86714|https://moodle.atlassian.net/browse/MDL-86714|smart-link] Please see that issue for full details about this issue and any peer review comments.,A
+12,MDL-88629,Improvement,Navigation footer: Add exceptions for the Glossary linear navigation,"This issue tracks the implementation of an exception rule to suppress the sticky footer rendering for the *Glossary* activity in specific administrative and data-entry views. Similar to other content-heavy activities, the linear navigation footer should remain available during the browsing and reading phases but be hidden when the user is actively creating entries or managing the glossary's structure to prevent accidental navigation and maintain focus.
+
+The footer should be suppressed during the ""Add entry"" process and within administrative management views, while remaining persistent when users are searching or filtering the glossary.
+
+h3. 🎯 *Required action*
+
+* Suppress the footer rendering logic for the following cases:
+** *Add/Edit entry*: When a user is adding a new entry or editing an existing one ({{edit.php}}).
+** *Delete entry:* The confirming page in the entry deletion process.
+** *Pending approval:* Listing the entries that need approval.
+** *Print-friendly page*: When viewing the glossary in the ""Print-friendly"" mode (to ensure a clean document without interactive navigation elements).
+** *Category management page:* When creating or editing glossary categories.
+** *Management views*: Pages related to importing entries ({{import.php}}), exporting entries ({{export.php}}) and exporting an entry to a main glossary (exportentry.php).
+** *Administrative views*: Pages related to permissions, filters, logs, and backup/restore within the activity context.
+* Maintain foote [...text cut here]",A
+13,MDL-87279,Improvement,Subsections: Remove description from settings page,"This issue tracks the implementation of improved, linear navigation for course content by *removing the description field for subsections*.
+
+h2. 💡 Research and discovery decisions
+
+Based on research into the desired course linear navigation experience, the following architectural and UX decisions were made:
+
+* *Subsection descriptions removed:* Support for subsection descriptions will be *discontinued*. The subsection settings page will be streamlined to contain only the *Name* and *Restrict access*.
+
+h2. ✅ Implementation tasks
+
+This issue should implement the following changes:
+
+# *Remove description from settings page:* The *Description* field should be removed from the *Subsection* settings page:
+!image-20251124-080350.png|width=640,alt=""image-20251124-080350.png""!
+The description must be kept on the Section settings page.
+
+
+h2. 🛠️ Technical implementation notes
+
+The following methods and files need modification to implement the required URL changes:
+
+h3. 1. Eliminating the Description field from the settings page
+
+* *File:* {{public/course/editsection_form.php}}
+* Display the ‘summary_editor’ only for non-delegated sections:
+
+{noformat}    if (!$sectioninfo->is_delegated()) {
+        $mform->addElement('editor', 'summary_editor', get_string('description'), null, $this->_customdata['editoroptions']);
+        $mform->setType('summary_editor', PARAM_RAW);
+    }{noformat}
+
+ 
+
+
+
+➕ More information can be found in [https://moodle.atlassian.net/wiki/spaces/Moppies/pages/33901445 [...text cut here]",A
+14,MDL-89068,Improvement,Feedback: Replace text navigation in show responses view with icon pagination and sticky footer,"With the introduction of the core course linear navigation feature, which uses a text-based sticky footer (""Previous"" / ""Next"") to cycle through course activities, the current layout of the mod_feedback response view introduces user experience friction:
+
+!image-20260701-125253.png|width=600,alt=""image-20260701-125253.png""!
+
+To resolve this ambiguity, we will refactor the report navigation UX by replacing text links with compact, icon-only pagination buttons, as in the forum activity. We will add a sticky footer with a ""Go to all responses"" link, also like the forum. Using distinct chevrons clearly isolates the interaction to ""navigating records within this report"" rather than ""moving to the next course activity"":
+
+!image-20260701-125348.png|width=600,alt=""image-20260701-125348.png""!
+
+
+
+h3. 🎯 Required actions
+
+* Extract the text-based ""◄ Prev"", ""Back"", and ""Next ►"" action links from the feedback show responses view layout.
+* Implement sticky footer: Call the {{set_supplementary_content()}} method to display the “Go to all responses” link.
+* Replace textual pagination with standard core chevron icon components, with localised screen-reader text (aria-label), to ensure strict visual differentiation from primary course navigation text buttons.
+* Update the relevant output renderers and mustache templates (within mod_feedback) to leverage core UI components and utility classes instead of inline or legacy structural styling.
+
+h3. (/) Acceptance criteria
+
+* The legacy text navigatio [...text cut here]",A
+15,MDL-87789,Bug,Fix bug in lib/lti1p3 causing omitted line item properties to be sent as nulls during deep linking return,"This is one of two blockers to using the new certification tooling at build.1edtech to certify (or re-certify) our LTI Provider as LTI Advantage Complete. Right now, during a deep linking workflow, after content selection (and assuming “add to gradebook” IS checked), the cert. suite reports:
+
+{noformat}""errors"": [
+    ""'label' should be a string"",
+    ""'tag' should be a string""
+],{noformat}
+
+Moodle doesn’t set label or tag on the lineitem when returning it as part of the content item, however. See the code responsible for that response here:
+[https://github.com/moodle/moodle/blob/f747c15cbf1c1c963a9592a73b167b969ec33d75/public/enrol/lti/configure.php#L76|https://github.com/moodle/moodle/blob/f747c15cbf1c1c963a9592a73b167b969ec33d75/public/enrol/lti/configure.php#L76|smart-link] 
+
+What should happen is that, because we’ve omitted those fields (i.e. we’re not calling setLabel() or setTag()), the label and tag properties should be excluded from the contentitem’s lineitem. These fields are optional per the spec: [https://www.imsglobal.org/spec/lti-dl/v2p0#lti-resource-link|https://www.imsglobal.org/spec/lti-dl/v2p0#lti-resource-link|smart-link]  
+
+If these fields are omitted, the certification suite’s diagnosis window reports everything is green and passing.
+
+I’ve reported this bug upstream([https://github.com/packbackbooks/lti-1-3-php-library/issues/169|https://github.com/packbackbooks/lti-1-3-php-library/issues/169|smart-link] ), but even when that lands and we upgrade our libr [...text cut here]",A
+16,MDL-88948,Bug,Course index accessibility issues,"# Lock icons in the Course index have no alternative text. Informative images require descriptive alt text per WCAG 1.1.1 (Non-text Content).
+## !image-20260625-094035.png|width=1126,alt=""image-20260625-094035.png""!
+# When focused, the course name link in the course index header changes from {{#56595C}} to {{#000}}. This change does not meet the contrast ratio requirement for non-text contrast (SC 1.4.11). 
+#* Normal: 
+!image-20260625-092808.png|width=582,alt=""image-20260625-092808.png""!
+#* Focused: 
+!image-20260625-092833.png|width=594,alt=""image-20260625-092833.png""!
+
+On the other hand, I think this is more of an issue of not meeting [SC 2.4.7 Focus Visible (Level AA)|https://www.w3.org/WAI/WCAG22/Understanding/focus-visible].
+
+# The “To do” icon does not meet the non-text contrast ratio requirement (3:1) against the blue background when rendered on a selected activity in the course index or when hovering over a selected activity in the course index.
+## “To do” icon on a selected activity: ({{#888888}} against {{#0F6CBF}})
+!image-20260625-093515.png|width=584,alt=""image-20260625-093515.png""!
+## “To do” icon when hovering on a selected activity:  ({{#888888}} against {{#0C589C}})
+!image-20260625-093548.png|width=556,alt=""image-20260625-093548.png""!
+# Similarly, the “Done” icon has insufficient contrast against the blue backgrounds.
+## “Done” icon on a selected activity: ({{#357A32}} against {{#0F6CBF}})
+!image-20260625-093733.png|width=556,alt=""image-20260625-093733.png""!
+## [...text cut here]",A
+17,MDL-88526,Task,[2026 Sprint 2.0] CIPs task: TPI-43  - General Support task,"h2. Description
+
+This issue captures the time spent on various general support tasks within CIPS.
+
+Note: Any extra information about this will be in this tracker, TPI-43",A
+18,MDL-89970,Task,"PR only: [MDL-89757] Site registration ""activeusers"" is measured against the previous login, so it systematically undercounts",This issue captures the sprint velocity for peer reviewing https://moodle.atlassian.net/browse/MDL-89757. Please see that issue for full details about this issue and any peer review comments.,A
+19,MDL-89207,Bug,Expanding and collapsing accordions in forms can result in wrong expanded state,"[https://wpaccessibility405.prototype.moodledemo.net/mod/appointment/view.php?id=3099|https://wpaccessibility405.prototype.moodledemo.net/mod/appointment/view.php?id=3099]  log in as admin and press “Add…” → “Appointment”
+
+From the report:
+
+{quote}After a user click the Expand/Collapse button on the top right, the expanded/collapsed state for the three accordions is inverted, conveying the incorrect state to the user.{quote}
+
+See attached video for demonstration.
+
+The {{aria-expanded}} attribute ends up inverted when you use the ‘Expand all’ and ‘Collapse all’ buttons together with expanding and collapsing individual groups directly.
+
+This also occurs on other settings page blocks, such as In Progress Courses, Calendar, Navigation, and Course settings.",A
+20,MDL-88401,Improvement,AI - Accessibility-Labels for Copy buttons and Regenerate not sufficiently descriptive,"There are separate Copy buttons for AI-generated Summary and AI-generated Explanation content, but both are currently labelled only as “Copy” “Regenerate“. This is not sufficiently descriptive for accessibility, especially for screen reader users.
+
+*Expected:*
+The Copy button for AI Summary has an accessible label of “Copy AI-generated summary”.
+The Copy button for AI Explanation has an accessible label of “Copy AI-generated explanation”.
+The Regenerate button for AI Summary has an accessible label of “Regenerate AI-generated summary”.
+The Regenerate button for AI Explanation has an accessible label of “Regenerate AI-generated explanation”.",A
+21,MDL-89153,Bug,Navigation footer displays oversized completion badge,"When viewing an activity with completion tracking enabled, the ""Done"" completion status in the activity navigation footer appears disproportionately large. It should be optimised to use a smaller, more discreet size to align neatly with the ""Previous"" and ""Next"" text links.
+
+h2. Steps to reproduce
+
+# Navigate to a course and select an activity with automatic activity completion enabled and configured.
+# View the activity as a student to trigger the footer rendering.
+# Observe the scaling and text size of the completion status element relative to the navigation links.
+
+h2. Actual behaviour
+
+The ""Done"" element matches or exceeds the visual weight of primary actions, making it appear too large for an inline footer layout:
+
+!image-20260713-100828.png|width=885,alt=""image-20260713-100828.png""!
+
+
+
+h2. Expected behaviour
+
+The completion status is scaled down to a smaller typography, matching the visual hierarchy shown in the prototype:
+
+!image-20260713-100816.png|width=728,alt=""image-20260713-100816.png""!",A
+22,MDL-87950,Improvement,Provide third-party libraries via Composer,"h2. What is this issue?
+
+This improvement intends to include all possible third-party libraries using Composer.
+
+Initially this will co-exist with the current approach and we will have them *at the same version as* the versions in Moodle core while we get people used to updating and installing from Composer.
+
+We will also:
+
+* be keeping those dependencies in Moodle until Moodle 6.0.
+* only be including those dependencies which have no modifications.
+* have to add something to ensure that the {{autoload.files}} are only included if the non-composer version has not already been included (only impacts AWS/SDK).
+
+h2. Why is this important?
+
+This is, essentially, a blocker to the Open Telemetry work because that work will require that some Open Telemetry packages be installed. Some of those Open Telemetry packages will then pull in other dependencies, such as a PSR7 handler, some PSR packages, and more. We already have several of those things and we want to be careful that we don’t end up with _different_ versions included. We want a single source of truth.
+
+h2. Tell me more about versions
+
+Initially we need to make sure that all package versions match the currently installed versions.
+
+When we properly mandate the use of Composer in 6.0, this will need to block the upgrade and installation of Moodle because we have dependencies on things like Mustache.
+
+If we bump any versions of any dependencies we will need to keep them in-sync.
+
+h2. Other things
+
+There are a _couple_ of librar [...text cut here]",A
+23,MDL-87099,Task,PR only: [MDL-87066] - Create clean_string() to simplify and improve Mustache rendering security,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-87066|https://moodle.atlassian.net/browse/MDL-87066|smart-link]. Please see that issue for full details about this issue and any peer review comments.,A
+24,MDL-88327,Task,PR only: MDL-86712 - Font weight for headers have gone from 700 to 500 during the switch to ≥ 5.0,This issue captures the sprint velocity for peer reviewing MDL-86712. Please see that issue for full details about this issue and any peer review comments.,A
+25,MDL-87953,Task,PR only: MDL-85236 - Avoid errors when logging into oauth with stale sesskey,This issue captures the sprint velocity for peer reviewing MDL-85236. Please see that issue for full details about this issue and any peer review comments.,A
+26,MDL-87163,Task,PR only: MDL-86846 - Use native button element for the core/drag_handle template,PR for MDL-86846,A
+27,MDL-86953,Bug,Mobile view - Long title in a block breaks the block editing (three dots) menu,"This is a follow up to [https://moodle.atlassian.net/browse/MDL-85398|https://moodle.atlassian.net/browse/MDL-85398|smart-link]. 
+
+When clicking the ellipsis icon in a block on the dashboard. The dropdown menu goes outside the viewport on small devices (Lower than 500px)
+
+!Screenshot 2025-10-16 at 16.45.36.png|width=375,height=406,alt=""Screenshot 2025-10-16 at 16.45.36.png""!",A
+28,MDL-89294,New Feature,React: Migrate top navigation to Design System component,"h2. Proposed change
+
+Migrate the current top navigation to the design system nav pill component.
+
+h2. Design resources
+
+Nav pill component: https://design.moodle.com/98292f05f/p/981bd1-nav-pill
+
+_No Figma node linked yet — please add the top navigation node._",A
+29,MDL-89306,Bug,"Changing date field on registration page, redirects to frontpage","*How to reproduce*
+
+* Create a Date/time user profile field 
+* Set it to be shown on the signup page and required
+* Remember to allow account creation in registerauth 
+* Go to the frontpage and click on the button to create an account
+* Try to change the date field
+* You will be redirected back to the login page",A
+30,MDL-88842,Improvement,Generate development and production outputs for ESM code,"Initially we went with a single build for the ESM outputs. In [https://moodle.atlassian.net/browse/MDL-88786|https://moodle.atlassian.net/browse/MDL-88786|smart-link] we simplified this build because it was generating different output depending on whether the build was run in watch mode or not - the watch would generate a ‘dev' build with some different options for minify, sourcemapping, etc.
+
+Now we know we do not want a different built depending on how the code is built, but this did later raise the question of whether we wanted a dev build at all.
+
+In our YUI days we generated three outputs:
+
+* min.js - a minified version for production
+* .js - a non-minified version for …????
+* -debug.js - a non-minified version with debugging
+
+We did away with this with AMD.
+
+And now I feel like we should come back to it with our new React overlord as it has a number of benefits when it comes to React client-side tooling and management.
+
+The advantages as I see it:
+
+* React profiler can be enabled/disabled based on the version used
+* Source maps can be provided to clients for Development only
+* Various other development features can be enabled for development, including:
+** jsxDev
+** keepNames
+** minify
+
+
+
+Whilst an improvement we shoudl still backport this change, which is in keeping with the policy we have for AMD changes. I don’t anticipate many people using ESM in 5.2, but it is still supported.
+
+I would also suggest that we rename the task from {{grunt react}} to {{grunt esm}} given [...text cut here]",A
+31,MDL-87881,Improvement,Add behat tests to restricted but visible activities,"In MDL-87283 we added a new page for restricted but visible activities. It was not covered by behat because there was no way to reach the new page via UI. But we realized Navigation block is showing a link for the restricted but visible activities. So we could cover the new feature by behat.
+
+I’ve also blocked this issue by [https://moodle.atlassian.net/browse/MDL-87679|https://moodle.atlassian.net/browse/MDL-87679|smart-link] to be sure we also can test logs by behat.",A
+32,MDL-86934,New Feature,Improve visibility and auditability of risks with roles,"The most common complaint we get almost every time a pentest is done is when too many people have an xss risk and its quite tedious to track these down at the moment.
+
+It should be much easier to audit a site to see all the risks each role has, I propose 2 UX changes to the role admin pages to make it much simpler to see:
+
+# Show all the role risks on the overview page. Even better would be to show the risk name here and not just the icon
+
+!image-20251016-064506.png|width=100%,alt=""image-20251016-064506.png""!
+
+# When you view or edit a role, make it much clearer what the risks of each capability are by displaying the text not hiding it behind a tooltip
+# Be able to filter by any risk and show all capabilities that have that risk
+# On this page be able to filter by risks /admin/tool/capability/index.php
+# Deep link into these pages from the xss risk check (eg [https://moodle.atlassian.net/browse/MDL-79686|https://moodle.atlassian.net/browse/MDL-79686|smart-link] and MDL-83455)",A
+33,MDL-87575,Improvement,Navigation footer: Implement a mechanism to add exceptions and implement them for the Assignment pages,"This issue tracks the implementation of an exception rule to suppress the sticky footer rendering for the Assignment activity in the following cases:
+
+* Add submission
+* Edit submission
+
+h3. 🎯 *Required action*
+
+* Implement a mechanism to conditionally disable the {{core_sticky_footer}} component rendering for specific views.
+* Identify the {{mod_assign}} controller state where {{action=editsubmission}} or when the submission form is present in the output buffer.
+* Ensure that the footer reappears immediately once the submission is saved or if the user returns to the assignment ""View"" (intro) page.
+
+h3. (/) *Acceptance criteria*
+
+* The sticky footer is *visible* on the Assignment intro page, where the instructions are displayed.
+* The sticky footer is *hidden* automatically when a student clicks ""Add submission"" or ""Edit submission"".
+
+----
+
+💻 *Miro board:* [https://miro.com/app/board/uXjVLvkC5gE=/?moveToWidget=3458764616285389348&cot=10|https://miro.com/app/board/uXjVLvkC5gE=/?moveToWidget=3458764616285389348&cot=10|smart-link] 
+
+📑 *Linear navigation for editing teachers:*[https://moodle.atlassian.net/wiki/spaces/Moppies/pages/3417014310/UX+Specifications+Linear+navigation#Linear-navigation-for-editing-teachers|https://moodle.atlassian.net/wiki/spaces/Moppies/pages/3417014310/UX+Specifications+Linear+navigation#Linear-navigation-for-editing-teachers|smart-link]",A
+34,MDL-88855,Task,Create Bandicoots team AI charter,"Create an AI charter in Confluence, for the team to agree on our ways of working with AI, based on our experience in the project sprint.",A
+35,MDL-89310,Task,PR only: [MDL-88683] Themes: Manage Site blogs Boost,This issue captures the sprint velocity for peer reviewing https://moodle.atlassian.net/browse/MDL-88683. Please see that issue for full details about this issue and any peer review comments.,A
+36,MDL-87311,Task,LTI Asset Processor Technical Discovery: View Report Workflow (Spec & Extensions),"This task aims to conduct a detailed technical investigation of the specification and extensions for supporting the *View Report workflow* for the LTI Asset Processor ([https://github.com/1EdTech/LTI-central/blob/main/proposals/asset-processor/specification.md#view-report|https://github.com/1EdTech/LTI-central/blob/main/proposals/asset-processor/specification.md#view-report] ). This includes reviewing the specification, identifying required extensions and assessing existing support within core_ltix.
+
+h4. Scope
+
+# Identify and document specification & required extensions
+## Review the functional requirements for the View Report workflow.
+## Document the required specification and extensions associated with this workflow.
+# Assess current support in core_ltix & identify potential gaps
+## Assess the View Report workflow requirements against the current core_ltix capabilities.
+## Determine for each requirement whether it is:
+### Already supported in core_ltix.
+### Supported but requires configuration or minor adjustments.
+### Not supported and requires new development.
+## For any missing or partially supported items, provide a proposed implementation plan detailing the required changes or additions, along with potential risks and dependencies.",A
+37,MDL-87228,Improvement,Add more options for automatic locking of an individual forum discussion after a period of inactivity,"Automatic locking of forum discussions as been integrated in Moodle with [https://moodle.atlassian.net/browse/MDL-55982|https://moodle.atlassian.net/browse/MDL-55982|smart-link].
+
+It would be useful to add more options for this setting, like 2 years, 3 years, 5 years.
+And perhaps also, for other use cases, 2 days, 3 days.
+
+It can be really easy done by adding such options in mod/forum/mod_form.php, just *before* the line defining lockdiscussionafter : 
+
+
+{noformat}$mform->addElement('select', 'lockdiscussionafter', get_string('lockdiscussionafter', 'forum'), $options);{noformat}
+
+Séverin",A
+38,MDL-87574,Improvement,Routing: Handle behaviour for restricted sections,"The linear course navigation must correctly handle *Sections* that are hidden or restricted based on access rules. We need to ensure that the 'Next' and 'Previous' routes lead students to the expected pages, specifically respecting the restricted section implementation (and the corresponding landing pages for restricted content).
+
+h3. 🎯 Required action
+
+* Ensure that sections marked as ‘Hidden’ from students (restricted with eye closed or hidden) are entirely skipped in the linear sequence, including all activities within them.
+* Confirm that sections that are restricted but visible to students (eye open) are included in the linear sequence. 'Next' should lead to the section landing page where restriction requirements are displayed.
+* The navigation sequence must update dynamically as a student unlocks a previously restricted section.
+
+h3. (/) Acceptance criteria
+
+* Students must not see a ‘Next’ or ‘Previous’ route pointing to a section (or its contents) that is fully hidden from their view.
+* If a section is visible but restricted (locked), going to ‘Next’ from the previous activity must navigate the user to that section's landing page to show why it is locked.
+* Verify that teachers/admins can still navigate through all sections (regardless of hide/restrict settings) to preview the full course flow.",A
+39,MDL-88400,Bug,Importing materials from a course with a long shortname does not work.,"*Steps*
+
+# Upload a course with a very long shortname (200 characters) into the system using a CSV file, for example
+
+||*shortname*||*fullname*||
+|2жжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжж|2жжжжжж|
+
+# Open another course and go to ""Course reuse"" > ""Import""
+# Select import data from the course with the very long shortname.
+# Do not jump to the final step right away; instead, follow the import process step by step.
+
+*System behavior*
+
+The import doesn't proceed past the ""Confirmation and review"" step. Clicking ""Perform import"" doesn't complete the import, and the same page is displayed again. No errors are displayed in the interface.
+
+*Desired behavior*
+
+The import proceeds to the following steps, the import is completed successfully.",A
+40,MDL-87694,Bug,Page header heading missing when accessing the course participant profile page as guest user,"When accessing a course participant as guest user, the page header heading is missing. This is an accessibility issue.
+
+For reference, please see [https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html|https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html|smart-link]on this a11y violation.
+
+To reproduce.
+
+# create a public course
+# enrol a user into that course.
+# view their course participant profile. it should start with {{/course/view}} and include the participant’s user id ({{id )}} and the course’s id ({{course}}) as request parameters. capture that profile URL for later reference.
+# log out.
+# revisit the profile URL.
+# you will be presented with a login form. click on {{Access as Guest}}
+# this lands you on the course participant profile page, displaying a confirmation dialog
+# in your browser dev tools/inspector, search for {{h1}} (there should be only one result). observe that it is empty. that’s the problem at hand.
+
+
+!image-20260116-184440.png|width=662,alt=""image-20260116-184440.png""!",A
+41,MDL-87929,Improvement,Restricted page: Display the availability conditions expanded,"Currently, the availability conditions section in the restricted page is rendered in a collapsed state, requiring users to click ""Show more"" to view the full details. To improve visibility and reduce friction, we need to modify this component so that all conditions are expanded by default, as described in the [Figma prototype|https://www.figma.com/proto/0jNMdb7sBnlOuSfwrHp0Ph/2025-%C2%B7-Course-linear-navigation?page-id=1230%3A110943&node-id=1283-77749&viewport=606%2C822%2C0.11&t=3ad0QxEheWDsgyni-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1338%3A101841]:
+
+!image-20260211-150649.png|width=645,alt=""image-20260211-150649.png""!
+
+h3. 👁️‍🗨️  *UX specification*
+
+* All availability conditions should be visible immediately upon page load.
+* Ideally, the ""Show more / Show less"" toggle should be removed entirely.
+** If removing the toggle logic is technically complex within the current component architecture, the section must still load in the expanded state by default.
+
+h3.  (/) *Acceptance criteria*
+
+* Upon navigating to the view, all availability conditions are fully visible in restricted pages for sections and modules.
+* The ""Show more"" button is no longer visible (if technically feasible).
+* If the ""Show less"" button remains, it must only appear if the user manually collapses the section (though removal is preferred).
+* UI matches the provided screenshot in terms of spacing and typography when expanded.",B
+42,MDL-88410,Improvement,Move the expand/collapse all out of General section,"The expand/collapse action icon for modules currently lives inside the first section of a course. Move this out of the section and place it outside the section.
+
+Current:
+
+!88410-current.png|thumbnail!
+
+Proposed:
+
+!88410-proposed.png|thumbnail!
+
+{panel:bgColor=#deebff}
+*Resources:*
+
+Design node for Figma: [https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=857-42682&m=dev|https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=857-42682&m=dev|smart-link] 
+View this [Loom video|https://www.loom.com/share/76ccaa81a5434c7393304af0ef2e97c9] before development
+{panel}",B
+43,MDL-88907,Task,PR only - [MDL-88772] - AI: The Summarize Prompt Includes the Explain Response and Vice Versa,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-88772|https://moodle.atlassian.net/browse/MDL-88772|smart-link]. Please see that issue for full details about this issue and any peer review comments.,B
+44,MDL-88912,Task,PR only: MDL-82514 - Calendar missing entries when resetting dropdown filter,This issue captures the sprint velocity for peer reviewing MDL-82514. Please see that issue for full details about this issue and any peer review comments.,B
+45,MDL-87454,Task,PR only: MDL-82439 - Antivirus email sending errors are shown to users,This issue captures the sprint velocity for peer reviewing MDL-82439. Please see that issue for full details about this issue and any peer review comments.,B
+46,MDL-87081,Task,PR only: MDL-86999 - The custom course fields table lost the stripe and the hover effect from Moodle 4.5,This issue captures the sprint velocity for peer reviewing MDL-86999. Please see that issue for full details about this issue and any peer review comments.,B
+47,MDL-89844,Task,LTI 1EDTech certification for Moodle 5.3 and other supported versions,Task to certify Moodle 5.3 and other supported versions as LTI Advantage Complete.,B
+48,MDL-87955,Bug,Accessibility issues on the forum's Manage subscribers page,"# The page uses layout tables.
+# More critical: The select elements do not have accessible names.
+
+!image-20260213-124041.png|width=958,alt=""image-20260213-124041.png""!",B
+49,MDL-88178,Task,Sprint 1.2 2026: IR issues by Huong,"||*Issue number*||*Points*||*Note*||
+|[https://moodle.atlassian.net/browse/MDL-88021|https://moodle.atlassian.net/browse/MDL-88021|smart-link]|1| |
+|[https://moodle.atlassian.net/browse/MDL-87831|https://moodle.atlassian.net/browse/MDL-87831|smart-link]|1| |",B
+50,MDL-89100,Task,"Random failure on ""test_set_scheduled_task_nextruntime""","Based on what I’m seeing, my best guess is that [https://moodle.atlassian.net/browse/MDL-84729|https://moodle.atlassian.net/browse/MDL-84729|smart-link] significantly improved the clock timing issues, but the {{manager}} class still uses the {{scheduled_task}} class method: {{get_next_scheduled_time()}}, which uses {{time()}} by default. The proposed change corrects that, which I am hopeful will resolve this random failure.
+
+I have seen these very random failures since at least {{2026-06-25}} on main branch so far.
+
+h2. Console Output
+
+h3. mariadb
+
+{code:java}1) core\task\manager_test::test_set_scheduled_task_nextruntime
+core\exception\coding_exception: Coding error detected, it must be fixed by a programmer:     A lock was created but not released at: * line 122 of /public/lib/classes/lock/mysql_lock_factory.php: call to core\lock\lock->__construct()
+* line 1061 of /public/lib/classes/task/manager.php: call to core\lock\mysql_lock_factory->get_lock()
+* line 666 of /public/lib/tests/task/manager_test.php: call to core\task\manager::get_next_scheduled_task()
+* line 1667 of /vendor/phpunit/phpunit/src/Framework/TestCase.php: call to core\task\manager_test->test_set_scheduled_task_nextruntime()
+* line 519 of /vendor/phpunit/phpunit/src/Framework/TestCase.php: call to PHPUnit\Framework\TestCase->runTest()
+* line 87 of /vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php: call to PHPUnit\Framework\TestCase->runBare()
+* line 365 of /vendor/phpunit/phpunit/src/Framework/T [...text cut here]",B
+51,MDL-88480,Task,PR only: [MDL-88133] Server file repository double encodes file listing when browsing repositories,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-88133|https://moodle.atlassian.net/browse/MDL-88133|smart-link]. Please see that issue for full details about this issue and any peer review comments.,B
+52,MDL-87690,Improvement,Convert Entity Custom Field Category to Shared Category,"Add functionality to allow converting an existing entity-specific custom field (CF) category into a shared custom field category.
+
+* A regular entity CF category (e.g. Course, Cohort, etc.) can be converted into a shared category.
+* The conversion will be triggered directly from the category actions on the Entity Custom Fields page. The user who triggers the conversion needs to be able to configure custom fields in both entities (origin and shared).
+* Before completing the conversion, display a confirmation modal informing the user that this action is irreversible.
+* Once converted, the category will be enabled for the source entity by default. This will be stated in the confirmation modal.
+* All existing custom field values stored for this category across entities must remain intact and continue to function after the conversion.
+* After the conversion, a toast should be displayed with a confirmation message.
+* If a shared custom field category with the same name already exists, the conversion should still proceed without errors.
+* If any custom field within the category being converted has a short name that already exists in a shared custom field category, the conversion must be blocked. In this case, display a notice to the user explaining why the conversion cannot proceed. The notice should advise the user to update the conflicting custom field short name before retrying the conversion.",B
+53,MDL-88922,Bug,Performance regression after implementing MDL-60912,"MDL-60912 (integrated in 5.0.7 / 5.1.4 / main) changed \core_completion\progress::get_course_progress_percentage() to call the new completion_info::get_user_activities_with_completion() instead of the lightweight get_activities().
+
+
+For every course module with completion enabled, get_user_activities_with_completion() now constructs a \core_availability\info_module and calls filter_user_list(), which in turn calls capability_checker::get_users_by_capability('moodle/course:ignoreavailabilityrestrictions') on the module context.
+
+
+This availability + capability resolution runs per module, per course, per request. On pages that summarise many courses via course_summary_exporter — Dashboard, Calendar block, Timeline block, Starred courses, My overview — the cost multiplies (courses × completion-enabled modules × capability resolution) and produces a noticeable performance regression compared with 5.0.6. The expensive work is also repeated because get_course_progress_percentage() is called multiple times per request for the same (course, user) pair (e.g. calendar/classes/external/event_exporter_base.php instantiates a new course_summary_exporter per event).
+
+
++*_This was anticipated during the MDL-60912 review (performance concern was raised in the comments) but no follow-up optimisation was integrated._*+
+
+
+
+*Steps to reproduce*
+
+# Site with completion tracking enabled.
+# A user enrolled in many courses, each with several completion-tracked activities (with few or no availability [...text cut here]",B
+54,MDL-89333,Task,PR only: MDL-87373 - BigBlueButton: Enable activity by default for new installs,PR only: MDL-87373 - BigBlueButton: Enable activity by default for new installs,B
+55,MDL-89088,New Feature,Implement REST API token entity and repository layer,"Implement the entity and repository for Non-OAuth2 REST API tokens under the {{core\api}} namespace.
+
+It introduces the core domain model and persistence layer used to manage manually created REST API tokens. These tokens provide authenticated access to Moodle REST APIs without requiring an OAuth2 authorisation flow.
+
+h4. Scope
+
+* Implement {{\core\api\api_token_entity}}
+** Domain model representing a REST API token.
+* Implement {{\core\api\api_token_repository}}
+** Repository responsible for persisting and retrieving REST API tokens.
+* Unit test coverage.",B
+56,MDL-89427,Task,PR only - [MDL-89270] - TinyMCE: Add support for managing font family and font size,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-89270|https://moodle.atlassian.net/browse/MDL-89270|smart-link] Please see that issue for full details about this issue and any peer review comments.,B
+57,MDL-87712,Improvement,Aesthetics: Implement redesigned dates in activity page,"As part of the initiative to improve the Course linear navigation experience, the *activity dates will be relocated* to improve readability and information hierarchy.
+
+Currently, the dates are nested within the activity header, positioned between the completion criteria and the description. This layout feels cluttered and makes the dates harder to scan. This issue involves moving the dates to a dedicated space directly above the description section.
+
+h3. 🎯 *Technical requirements*
+
+* *Relocation:* Move the dates from their current location to the area above the description section, as displayed in [the Figma prototype|https://www.figma.com/proto/0jNMdb7sBnlOuSfwrHp0Ph/2025-%C2%B7-Course-linear-navigation?page-id=1230%3A110943&node-id=1338-101841&viewport=606%2C822%2C0.11&t=3ad0QxEheWDsgyni-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1338%3A101841]:
+!image-20260120-114631.png|width=640,alt=""image-20260120-114631.png""!
+* *Layout update:* Apply the new layout as seen in the prototype (e.g. font weight, colour, padding, page width…).
+* *Responsive behaviour:* Ensure the information scales correctly on smaller screen sizes/mobile views. Check the [Figma prototype for mobile devices|https://www.figma.com/design/0jNMdb7sBnlOuSfwrHp0Ph/2025-%C2%B7-Course-linear-navigation?node-id=1694-38738]:
+!image-20260120-114708.png|width=412,alt=""image-20260120-114708.png""!
+
+
+
+h3. (/)  *Acceptance criteria*
+
+# *Placement:* The dates appear above the task description.
+# *Data [...text cut here]",B
+58,MDL-88552,Improvement,Generate types for existing AMD code,"THis is a followup [https://moodle.atlassian.net/browse/MDL-88113|https://moodle.atlassian.net/browse/MDL-88113|smart-link]. We can use Typescript to generate type definitions for all installed AMD modules, which will help with using AMD code in ESM.",B
+59,MDL-89601,Task,Upgrade PHP DI Invoker to 2.3.7,PHP DI Invoker    public/lib/php-di/invoker   2.3.6  -->  2.3.7    https://github.com/php-di/invoker,B
+60,MDL-90115,Task,PR only: [MDL-89803] - Wrong end date when unchecking Enable checkbox,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-89803|https://moodle.atlassian.net/browse/MDL-89803|smart-link]. Please see that issue for full details about this issue and any peer review comments.,B
+61,MDL-88432,Bug,Single quotes in search query return no results on MSSQL (non full-text fallback path),"h3. Summary
+
+When using the Simple search engine ({{search_simpledb}}) on a site where {{is_fulltext_search_supported()}} returns false (e.g. MSSQL without full-text search installed), searching for a term containing a single quote (e.g. it's) returns no results.
+
+!Screenshot 2026-04-13 at 18-37-50 Global search int_nftss.png|width=250!
+
+Single quotes
+
+!Screenshot 2026-04-13 at 18-38-04 Global search int_nftss.png|width=250!
+
+Double quotes
+
+h3. Root Cause
+
+In {{search/engine/simpledb/classes/engine.php}}, the {{get_simple_query()}} method only strips double quotes from the query string before building the LIKE-based SQL:
+
+{noformat}$q = str_replace('""', '', $q);{noformat}
+
+Single quotes are left untouched, which causes the LIKE '%it's%' parameter to effectively break on MSSQL, silently returning no results.
+
+h3. Steps to Reproduce
+
+# Set up a Moodle site on MSSQL without full-text search enabled
+# Enable global search with Simple search engine
+# Index some content
+# Search for a term containing a single quote (e.g. it's or Moodle's)
+# Observe: no results returned
+
+h3. Expected Behaviour
+
+Search results containing the term should be returned, with the single quote either stripped or properly handled.
+
+h3. Suggested Fix
+
+In get_simple_query(), also strip single quotes:
+
+{noformat}> $q = str_replace(['""', ""'""], '', $q);{noformat}",B
+62,MDL-87717,Improvement,Update environment.xml tests to understand that composer may be installed in the parent directory,"We introduced environment checks in 5.1 to ensure that {{composer install}} has been run.
+
+When adding support for installation of Moodle using Composer we’ll need to modify these checks as Composer may be installed in the parent directory.",B
+63,MDL-87600,Bug,Skipped heading levels accessibility issue on user Grades and Preferences pages,"From testing with WAVE, I have identified the heading levels are incorrect on the user ‘Grades’ page and also the user ‘Preferences’ page.
+
+Heading level goes from a H1 to H3 (skipping H2) on the grades page, and a H1 to H4 (skipping H3) on the preferences page.
+
+Examples tested on the Moodle Mount Orange test site.
+
+[Preferences | Mount Orange|https://school.moodledemo.net/user/preferences.php]
+
+[Grades - Barbara Gardner | Mount Orange|https://school.moodledemo.net/grade/report/overview/index.php] 
+
+This also affects Moodle Workplace 4.5.5
+
+See screenshots for WAVE example
+
+!Preferences page.png|width=671,alt=""Preferences page.png""!
+
+!Grades.png|width=671,alt=""Grades.png""!",B
+64,MDL-87283,Improvement,New restricted page for restricted modules with visible restrictions for the user,"The main aim of this issue is to create a new page for the restricted activities to be redirected to. Once we implement the course linear navigation, the activities that are shown in the course page even though they are restricted, will be part of the linear navigation, so they need their own landing page to be part of the Next-Previous workflow.
+
+
+# Create a new course/restricted.php page that recibes as a required parameter the module id and renders the course format activity mustache with the following information.
+#* Name
+#* Dates returned by get_dates_for_module()
+#* Description only when the ""Display in course"" is enabled in the module.
+#* Restriction information 
+# Change require_login() function to redirect the activities with ""visible"" restrictions to the restricted.php page instead of the course page.
+Activities that *support FEATURE_NO_VIEW_LINK, don't support FEATURE_CAN_DISPLAY or sectiondelegate::has_delegate_class()* would continue redirecting to the course page and showing the error message as they are right now, instead of to the restricted.php page.
+
+
+
+Be sure that activities in this restricted.php are showns only when the activity is shown in the course page for the user.",B
+65,MDL-89114,Task,PR only - [MDL-70346] - Unable to disable date_selector inside a form group,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-70346|https://moodle.atlassian.net/browse/MDL-70346|smart-link]. Please see that issue for full details about this issue and any peer review comments.,B
+66,MDL-88962,Bug,Course Home edit mode: No status message when moving sections (WCAG 4.1.3),"On Course Home-edit page (audit page 4), moving a section does not provide a status message to assistive technology. WCAG 4.1.3 - Status Messages.
+
+WCAG reference: [https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html|https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html]
+
+Source: 2026 WCAG accessibility audit.",B
+67,MDL-87836,Improvement,Change the icons for notifications and messages,"Update the icons for notifications and messages as a part of the ui uplift.
+
+Current:
+
+!87836-current.png|thumbnail!
+
+Proposed:
+
+!87836-proposed.png|thumbnail!
+
+Design node from Figma: [https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=857-42671&m=dev|https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=857-42671&m=dev|smart-link]",B
+68,MDL-87350,Improvement,MoodleNet - Remove outbound sharing,"Remove the outbound sharing to MoodleNet functionality.
+
+This is currently experimental functionality, which means we are not locked to the regular deprecation cycle and can remove it in the next release. There will need to be some analysis done of the code and libraries used to make sure they’re not being shared by other unrelated components.",B
+69,MDL-88528,Bug,Logo image breaks main menu on small screens (mobile),"h3. Description
+
+The logo image does not resize properly on mobile view. This causes the UI to break. Users cannot click on the menus behind the image.
+
+h3. Expected behaviour
+
+The logo image should resize to fit the designated space. Menus should remain clickable.
+
+
+
+Examples:
+
+!Screenshot 2026-04-23 111931.png|width=384,alt=""Screenshot 2026-04-23 111931.png""!
+
+!Screenshot 2026-04-23 144827.png|width=340,alt=""Screenshot 2026-04-23 144827.png""!",B
+70,MDL-88456,Task,Add Moodle 5.2.0 upgrade line to all the upgrade.php scripts,"To have it properly detected for the future, it would be great to add to all the upgrade.php scripts some lines like these:
+
+{code:php}// Automatically generated Moodle v5.2.0 release upgrade line.
+// Put any upgrade step following this.{code}
+
+exactly before the ""{{return true;}}"" present in all the scripts.
+
+Normally, it's ok to do that both in the stable (502_STABLE) and the {{main}} branches, so they will allow quickly find where 5.2.0 started and act once we decide future requirements.
+
+But, *when under parallel development, this only can be done in the stable (502_STABLE) branch* as the {{main}} branch already has diverged and can have own upgrade steps not corresponding to the version just released, but to the future version being developed in parallel.
+
+The change can be performed globally with:
+
+{code:java}#!/bin/bash
+export rel=""5.2.0"" && find . -name upgrade.php | \
+xargs grep -l 'function.*xmldb_.*_upgrade' | \
+grep '/db/' | \
+xargs grep -L ""Automatically generated Moodle v${rel} release upgrade"" | \
+xargs perl -p -i -e 's@( *)(return true;)@\1// Automatically generated Moodle v$ENV{rel} release upgrade line.\n\1// Put any upgrade step following this.\n\n\1\2@s'{code}
+
+*Command to detect* all the upgrade.php files not having those lines:
+
+{code:java}find . -name upgrade.php | xargs grep -l 'function.*xmldb_.*_upgrade' | grep '/db/' | xargs grep -L 'Automatically generated Moodle v5.2.0 release upgrade'{code}
+
+*Commands to detect* that we have not added the l [...text cut here]",B
+71,MDL-87093,Task,Investigate observer impact and improve mitigations,"Observing any system has an observer impact, not least in terms of performance.
+
+We need to analyse the observer impact of our otel integration and determine what mitigations we may be able to _add_, for example:
+
+* Configuration in {{config.php}} to enable or disable individual observers
+* Limiting within an observer as to the observations
+* Documenting these configuration options and their observer impacts
+* Providing developer docs on how to write ‘good’ observers
+** Ensuring that we follow best practice on writing performant observers",B
+72,MDL-88455,Task,Bump backup internal version and release information for the 5.3 branch,"We used to update the internal backup version and release it during majors. While not used during the process, that information is included in each backup, and it has helped in the past to detect inconsistencies caused by the partially updated codebase and other problems.
+
+Since Moodle 2.4, we have been checking the version and release with the CI versions checker, so this is a task that we should always perform immediately after a major release (hence, it has been included in the [Release process|https://moodledev.io/general/development/process/release#packaging]).
+
+Summary:
+
+1) Both in the new stable branch and in the master (file backup/backup.class.php):
+
+* VERSION must match the main $version (10 digits).
+* RELEASE must match the main $release (X.Y format).
+(Provide all the needed changes to achieve this.)
+
+As a side note, this is one of the allowed differences between the just-created stable branch and the main branch during the on-sync period.",B
+73,MDL-88429,Task,PR only: MDL-83815 - Unable to Remove Forum Rating or Set to None (Null),This issue captures the sprint velocity for peer reviewing MDL-83815. Please see that issue for full details about this issue and any peer review comments.,B
+74,MDL-88634,Improvement,Navigation footer: Add exceptions for the SCORM linear navigation,"This issue tracks the implementation of an exception rule to suppress the sticky footer rendering for the *SCORM* activity during the active player phase and administrative management. Because SCORM packages often utilise their own internal navigation, full-screen modes, or specific frame sets, the course-level linear navigation footer must be hidden during the package playback to avoid UI conflicts and ensure the SCORM content has maximum available screen real estate.
+
+The footer should be visible during the entry/preview phase but suppressed once the player is launched.
+
+h3. 🎯 *Required action*
+
+* Suppress the footer rendering logic for the following cases:
+** *Active SCORM player*: When the user is interacting with the SCORM content ({{player.php}}). This includes all layouts (top navigation, side navigation, or floating).
+** *Reports and Management*: When a teacher or manager is viewing the ""Reports"", ""Track details"", or ""Interactions"" tabs.
+** *Administrative views*: Pages related to permissions, filters, logs, and backup/restore within the activity context.
+* Maintain footer visibility for the following states:
+** *SCORM entry page*: The initial landing page where the description and ""Enter"" or ""Preview"" buttons are displayed ({{view.php}}).
+* Redirect users from the SCORM player to the activity view page when they click the Exit activity button or close the SCORM player window, ignoring the “Student skip content structure page” setting.
+* Ensure that the footer reappea [...text cut here]",B
+75,MDL-87834,Improvement,Place global search field inline in top navigation,"The current search behaviour in the top navigation is visually disruptive due to overlay or full-width expansion. Update the navigation so the search field is always visible and positioned inline, providing a predictable and stable interaction without changing search functionality.
+
+*Acceptance criteria*
+
+# The search field is permanently visible within the top navigation
+# Overlay and full-width expansion behaviour is removed
+# Search interaction does not cause layout shifts or visual disruption
+# Search behaviour follows common, familiar navigation patterns
+# Search functionality remains unchanged
+# The current design be retained for mobile devices
+
+Current design:
+
+!current04.gif|thumbnail!
+
+Proposed:
+
+!proposed04.png|thumbnail!
+
+Design node in Figma: [https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=813-18751&m=dev|https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=813-18751&m=dev|smart-link] 
+
+Responsive design node in Figma: [https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=813-18749&m=dev|https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?node-id=813-18749&m=dev|smart-link]",B
+76,MDL-88409,Improvement,Improve the block drawer,"After implementing [https://moodle.atlassian.net/browse/MDL-87805|https://moodle.atlassian.net/browse/MDL-87805|smart-link], the side drawer will not have a shadow; it will look like one part of the page when opened.
+
+We need to make some changes to align with the ui uplift.
+
+* Change the drawer icon according to the design
+* Every block has an instance header and a div for block control. Separate these two into a div and add a bottom border; keep it consistent with the bottom div.
+
+Current:
+
+!88409-current.png|thumbnail!
+
+Proposed:
+
+!88409-proposed.png|thumbnail!
+
+Design node from Figma: [https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?t=05EEPPjzo6FeWSvZ-0|https://www.figma.com/design/rlo17bSNmm9tChVnLgbJa6/MDL-87755---LMS-uplift--phase-1-?t=05EEPPjzo6FeWSvZ-0|smart-link]",B
+77,MDL-89403,Task,PR only: MDL-89098 - Theme: Custom login page image does not center like the default image,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-89098|https://moodle.atlassian.net/browse/MDL-89098|smart-link]   Please see that issue for full details about this issue and any peer review comments.,B
+78,MDL-90137,Task,PR only: [MDL-89786] - address_in_subnet() fails to match IPv6 addresses ending in `::`,This issue captures the sprint velocity for peer reviewing MDL-89786. Please see that issue for full details about this issue and any peer review comments.,B
+79,MDL-89239,Task,PR only: MDL-87016 - Prepend fake subplugins to ensure consistent test overrides,This issue captures the sprint velocity for peer reviewing MDL-87016. Please see that issue for full details about this issue and any peer review comments.,B
+80,MDL-86978,Task,PR only: MDL-86915 - Missing string in Plugin privacy compliance registry,This issue captures the sprint velocity for peer reviewing MDL-86915. Please see that issue for full details about this issue and any peer review comments.,B
+81,MDL-87624,Bug,TypeError when trying to use \core\route\require_login for courseless login checks,"I’m trying to implement a controller for a non-course-centric route, using the following attribute helper:
+
+{noformat}...
+requirelogin: new require_login(
+    requirelogin: true,
+    autologinguest: false,
+)
+...{noformat}
+
+This is synonymous with the old require_login(null, false); login is required, but not for a course.
+
+Currently, the above results in a TypeError because moodle_authentication_middleware calls $requirements->get_course_attribute_name(), which is typed to return a string (but actually is a nullable param underneath). If we’re not setting that param in the attribute declaration, then it’s null and results in that TyepError. Additionally, in the middleware, $courseorid is conditionally set, only if we’re able to get this courseattributename. 
+
+I think we want to support null in the login helper -  i.e. make get_course_attribute_name() return null or string - and then support null as a valid value for $courseorid in the middleware, so we can then pass this along to require_login() there too. It seems this was the intention of this code, as there’s already calls to require_login there - hence reporting this as a bug for now.",B
+82,MDL-88604,Improvement,Navigation footer: Implement linear navigation exceptions for Previous/Next,"Following the implementation of the core 'Previous' and 'Next' navigation buttons, we need to refine the logic to handle boundary cases within the course structure. This improvement ensures that the navigation remains logical and does not lead users into ""dead ends"" or redundant loops.
+
+Specifically, we need to handle the start of course sections and the end of the course. At the first activity of a course, the “Previous” link should be suppressed to encourage a forward-moving flow within that module. At the final activity of the entire course, the “Next” link should be replaced with a clear ""Back to course"" link to return the user to the main course page for closure:
+
+!image-20260430-132750.png|width=600,alt=""image-20260430-132750.png""!
+
+!image-20260430-132814.png|width=600,alt=""image-20260430-132814.png""!
+
+h3. 🎯 Required actions
+
+* Update the navigation renderer to detect if the current activity is the first item in the course. If so, the “Previous” button should be hidden.
+* Update the footer logic to identify the final activity in the entire course sequence. For the last activity, replace the standard “Next” link with a ""Go to course"" link as per the design prototype.
+* Ensure the ""Go to course"" link correctly resolves to the course main page (course/view.php?id=x).
+* Ensure that when the “Previous” button is hidden (at the first activity of a course), the remaining navigation elements (the “Next” button or ""Go to course"" link) maintain their correct alignment according t [...text cut here]",B
+83,MDL-89533,Task,PR only - [MDL-89441] - Bump to Behat 3.32.x and PHPUnit 11.5.x,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-89441|https://moodle.atlassian.net/browse/MDL-89441|smart-link] Please see that issue for full details about this issue and any peer review comments.,B
+84,MDL-89241,Task,Import changed English (fixes) (en_fix) strings into the English language pack for 5.2.2 and 5.3,"English language strings for Moodle 5.2.2 and 5.3 have been reviewed for typos, consistency and clarity, with improvements added the English (fixes) (en_fix) language pack ([https://moodle.atlassian.net/browse/MDL-88994|https://moodle.atlassian.net/browse/MDL-88994|smart-link] ).
+
+This issue covers importing those updated en_fix strings — as well as those from [https://moodle.atlassian.net/browse/MDL-88811|https://moodle.atlassian.net/browse/MDL-88811|smart-link] — into the main English (en) language pack.
+
+[~accountid:5ccb99144253ab0e29348c22] and [~accountid:5b4e1b8cb84bc45fea9605e4] pinging you both as requested.",B
+85,MDL-88579,Improvement,Extend the  `moodle_exception` constructor to accept the `?\Throwable $previous` and pass this to the parent,"This is one that has bugged me for years.
+
+The [constructor for `\Exception|https://www.php.net/manual/en/exception.construct.php]` includes a {{?Throwable $previous = null}} which allows you to chain exceptions, however we do not support it in Moodle’s exception.
+
+I’d like to make use of this in the OAuth2 work to be able to throw a web service-releated exception (such as 404) and provide the exception which triggered it.
+
+We can do so by adding the previous param to the {{\core\exception\moodle_exception}} constructor and providing it to the parent.",B
+86,MDL-87623,Improvement,Subsections: Implement redesigned subsection display,"User research indicated that the previous linear navigation experience (which included a dedicated subsection landing page and description) created unnecessary friction. To streamline the learning path, the subsection landing page has been eliminated and moved toward a direct-access model.
+
+This issue tracks the *visual and structural implementation of the new subsection display* as defined in the updated Figma prototype. The goal is to transition from a ""page-based"" subsection to an ""inline"" or ""overlay"" component that improves course flow.
+
+h3. 🎯 Required action
+
+Detailed specifications and styling for subsections can be found in the [+Figma prototype link+|https://www.figma.com/proto/0jNMdb7sBnlOuSfwrHp0Ph/2025-%C2%B7-Course-linear-navigation?page-id=1230%3A110943&node-id=1338-101841&viewport=606%2C822%2C0.11&t=3ad0QxEheWDsgyni-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1338%3A101841]:
+
+* Remove border
+* Add a line after the subsection header
+
+New design:
+
+!image-20260109-074336.png|width=625,alt=""image-20260109-074336.png""!
+
+Current design:
+
+!image-20260109-075002.png|width=671,alt=""image-20260109-075002.png""!
+
+
+
+h3. (/) Acceptance criteria
+
+To consider this task complete, the following criteria must be met:
+
+* *Design fidelity:* The subsections must match the styles specified in the *Figma prototype*. 
+** Subsections must display as nested elements within the main outline, following the new styling.
+** When viewing a specific section, subsections m [...text cut here]",B
+87,MDL-86851,Task,[2025 Planning Sprint 4] CIPs task: TPI-52 - Plugin Review,"This issue captures the time spend in CIPS tasks. 
+Note: Any extra information about this will be in this tracker  TPI-52",B
+88,MDL-89933,Bug,$CFG->nosmsever has no effect because should_send_sms() does not declare global $CFG,"{{config-dist.php}} documents {{$CFG->nosmsever}} as the setting that stops a test server sending SMS to real users:
+
+{noformat}// To stop sending SMS to users in test servers
+// $CFG->nosmsever = true;    // NOT FOR PRODUCTION SERVERS!{noformat}
+
+The SMS message processor checks it in {{message_output_sms::should_send_sms()}}:
+
+{noformat}public function should_send_sms(stdclass $messagedata): bool {
+    // Don't send SMS if it's not a production site and the following config is set.
+    if (!empty($CFG->nosmsever)) {{noformat}
+
+The method never declares {{global $CFG;}}, so {{$CFG}} here is an undefined local variable. {{empty($CFG->nosmsever)}} is always true and the check never runs. SMS notifications are still sent when {{$CFG->nosmsever = true}} is set, which is exactly what the setting exists to prevent, for example on a test server restored from production data.
+
+This was found while investigating the PHPUnit failure on MDL-88803.
+
+Steps to reproduce
+
+# Add {{$CFG->nosmsever = true;}} to config.php.
+# Call {{(new message_output_sms())->should_send_sms($message)}} with a message that otherwise qualifies for SMS, for example:
+component = mod_assign, name = assign_due_digest, fullmessagesms = 'Hello'.
+
+Expected: returns false and prints ""Can not send SMS while nosmsever is enabled."" when run from CLI.
+Actual: returns true, and the SMS goes on to be sent.
+
+Confirmed locally on main with a unit test: it fails on current code and passes once {{global $CFG;}} is added to the [...text cut here]",B
+89,MDL-89902,Bug,Secondary navigation not updating URL anchors,"There is an issue with the way the secondary navigation (particularly site administration), where it’s possible for the navigation to not update the URL, which means that refreshing the page will return you to the wrong page (eg to “general” instead of “notifications”). I was able to reproduce this in both Chrome and Firefox, but it is intermittent (so may be some race condition or similar). In instances where my page wasn’t affected, clicking “site administration” again and retrying worked after several attempts. Here is a video:
+
+[^navigation-bug.webm]
+
+There’s an adjacent intermittent issue that when you right click and open one of the navigation options in a new tab, it loads the correct content, but selects the wrong navigation pull (eg general isntead of reports, when it has loaded the reports page):
+
+!image-20260924-045543.png|width=686,alt=""image-20260924-045543.png""!
+
+This was originally flagged by [~accountid:5b4509fd978af72cc15b79c2].",B
+90,MDL-86832,Improvement,Remove the activities block (take 2),"During the QA cycle it was identified the upgrade step to remove the activities block added by [https://moodle.atlassian.net/browse/MDL-83887|https://moodle.atlassian.net/browse/MDL-83887|smart-link] was causing the upgrade time to take a longer time to run, see [https://moodle.atlassian.net/browse/MDLQA-20807|https://moodle.atlassian.net/browse/MDLQA-20807|smart-link].
+
+Because of that [https://moodle.atlassian.net/browse/MDL-86782|https://moodle.atlassian.net/browse/MDL-86782|smart-link]  was created and the code of the MDL above has been reverted.
+
+As a follow-up we need to go back to the issue and explore ways to improve the performance of the blocks removal.
+
+Adding the description from the original [https://moodle.atlassian.net/browse/MDL-83887|https://moodle.atlassian.net/browse/MDL-83887|smart-link]:",B
+91,MDL-89868,Bug,Course index section links still point at the old positions after a section is moved,"Each section link in the course index points at a position rather than at a section — {{#section-3}}, {{#section-4}} and so on. Move a section and those positions change, but the course index does not update its links. They keep the numbers they were built with, so clicking them takes you to the wrong section until the page is reloaded.
+
+The main course page does not have this problem. It renumbers its own sections as soon as one moves. Only the course index is left behind.
+
+Steps to reproduce:
+
+# In a course with several sections, turn editing on and open the course index.
+# Drag a section in the course index to a different position.
+# Without reloading, click the sections in the course index one by one.
+
+Expected: each link takes you to the section you clicked.
+
+Actual: the links are out by however far things moved. Reloading the page puts them right again, until the next move.
+
+Knock-on effect worth knowing when reproducing: after landing in the wrong place, the highlighted item in the course index can be an activity from a completely different section. That part is not a separate fault — the highlight follows where the page has scrolled to, so once you have been sent to the wrong position it highlights whatever happens to be there.
+
+Found during 5.3 QA testing, on MDLQA-22159.",B
+92,MDL-87548,Bug,Uploading image from Wikimedia fails on certain images,"h3. Steps to produce:
+
+# Log in as admin.
+# Navigate to Site Admin.
+# Search for “wikimedia"".
+# On the search results page, click the Wikimedia link.
+# Specify the repository plugin name as “Wikimedia"" and save.
+# Go to the edit profile page.
+# Add a new user picture.
+# Click ""Wikimedia” in the file picker.
+# Search for {{20231125 housecat south meadows PD100306.jpg}} with maximum width and height of 1024 px.
+# Select the first image.
+# The uploaded image is broken.
+# Add a new user picture again using Wikimedia.
+# Search for {{20231125 housecat south meadows PD100306.jpg}} with maximum width and height of 640 px.
+# Select the first image.
+# The uploaded image is successful.
+
+h3. Expectation
+
+The expected result is that users can upload all kinds of images from Wikimedia.",B
+93,MDL-88006,Bug,AI responses need line breaks corrected,"When generating a response that spans more than one paragraph, AI providers can use different line breaks.
+
+To normalise line breaks, {{replaceLineBreaks}} in {{ai/amd/src/helper.js}} was created. 
+
+Currently, some providers are showing results with some poorly converted line breaks. There seem to be far too many {{<br>}} tags between paragraphs.
+
+!too many brs.png|thumbnail!
+
+{{replaceLineBreaks}} needs some refinement to handle line breaks in a predictable. standardised way between all the different providers and models.
+
+*Ollama line breaks*
+
+!ollama line breaks.png|thumbnail!
+
+*OpenAI line breaks*
+
+!openai line breaks.png|thumbnail!
+
+*Gemini line breaks*
+
+!gemini line breaks.png|thumbnail!",B
+94,MDL-89151,Bug,Navigation footer displays redundant pipe separator when completion data is absent,"When viewing an activity where completion tracking is disabled or not applicable (meaning the ""Done"" or ""Mark as done"" component is not rendered), the activity navigation footer retains a stray vertical pipe ({{|}}) separator immediately preceding the ""Next"" navigation link.
+
+The layout logic should conditionally render this separator only when both the completion state and the ""Next"" link are present.
+
+h2. Steps to reproduce
+
+# *MDL-88882 branch should be integrated in your branch to see the issue*
+# Navigate to a course with course navigation enabled and create or select an activity.
+# Ensure activity completion is disabled for this specific activity.
+# View the activity as a student or teacher.
+# Scroll to the navigation footer at the bottom of the page.
+
+h2. Actual behaviour
+
+A stray vertical pipe ({{|}}) separator is visible to the left of the ""Next"" hyperlink, despite the absence of any completion information:
+
+!image-20260713-082624.png|width=600,alt=""image-20260713-082624.png""!
+
+
+
+h2. Expected behaviour
+
+The pipe separator should be omitted entirely, leaving only the ""Previous"" and ""Next"" navigation links aligned correctly without dangling dividers:
+
+!image-20260713-082639.png|width=600,alt=""image-20260713-082639.png""!",B
+95,MDL-89496,Bug,Section content template is not backward compatible,"Originally raised by Cam
+
+In [https://moodle.atlassian.net/browse/MDL-88410|https://moodle.atlassian.net/browse/MDL-88410|smart-link], we moved the Collapse/Expand out of the General section.
+
+It caused some 3rd party themes to stop working because they are overriding the template.
+
+As discussed, a possible  approach would be:
+
+# Restore {{collapsemenu}} and its template block and mark them as deprecated
+# When the new parent renders a section, explicitly suppress the legacy markup; old parent overrides won’t apply the suppression, so they retain the old behaviour",B
+96,MDL-88635,Improvement,Navigation footer: Add exceptions for the Wiki linear navigation,"This issue tracks the implementation of an exception rule to suppress the sticky footer rendering for the *Wiki* activity in specific editing and management views. While the linear navigation footer should remain available during the reading phase to facilitate course progression, it should be hidden when the user is actively editing pages or managing the wiki structure to provide a focused environment and prevent accidental navigation.
+
+The footer should be suppressed during page creation and editing, but remain persistent when users are browsing or reading wiki pages.
+
+h3. 🎯 *Required action*
+
+* Suppress the footer rendering logic for the following cases:
+** *Edit/Create page*: When a user is adding a new page or editing an existing one ({{edit.php}}).
+** *Print-friendly page*: When viewing the wiki page in print mode (to ensure a clean document without interactive navigation elements).
+** *Administrative views*: Pages related to permissions, filters, logs, and backup/restore.
+* Maintain footer visibility for the following user-facing states:
+** *View page*: The standard reading mode for the main page or any subpages ({{view.php}}).
+** *Search results*: When viewing results from a wiki search.
+** *Management tabs*: When accessing the ""Comments"", ""History"", ""Map"", ""Files"", or ""Administration"" tabs. Linked pages with forms, such as Edit comments, Edit files, or confirm actions, should hide the navigation footer.
+* Ensure that the footer reappears immediately once a user saves [...text cut here]",B
+97,MDL-89422,Bug,"Undefined constant ""mod_resource\completion\RESOURCELIB_DISPLAY_NEW"" in resource overview page","When “Course completion tracking” is enabled and “Show activity completion conditions” is not, the ressource overview in the “Activities” tab doesn’t load for students if a file was added and it’s completion condition is set to “Students must manually mark the activity as done”. 
+
+Also, in Moodle 5.1, if students click on the “Resources” link in the “Activities” block, the following error is displayed : _Exception - Undefined constant ""mod_resource\completion\RESOURCELIB_DISPLAY_NEW""._
+
+*Step to reproduce:*
+
+# As a teacher, go in the course settings.
+# Select “Yes” for “Enable completion tracking” and “No” for “Show activity completion conditions” and Save.
+!image-20260810-184533 (759f1168-88bd-4143-acb8-62900ce12365).png|width=430,alt=""image-20260810-184533.png""!
+# Enable edit mode and add an “Activity or resource”.
+# Select “File” and add a file.
+# In the “Completion conditions”, select “Students must manually mark the activity as done” and Save.
+!image-20260810-185220 (4afcfdcd-a4ca-4a7c-9480-e01321c95f95).png|width=753,alt=""image-20260810-185220.png""!
+
+# *As a student*, click on the “Activities” tab and click to open the “Resources” section. 
+{color:#ff5630}*PROBLEM:*{color} The list of resources never loads.
+!image-20260810-185813 (74390b7a-17bf-421e-a80c-78f4cd51f177).png|width=780,alt=""image-20260810-185813.png""!
+
+# In *Moodle 5.1*, as a *student*, click on the “Resources” link in the “Activities” block.
+!image-20260810-185920 (08b536d5-9fb1-486b-9720-ef8a63fe8b80).png [...text cut here]",B
+98,MDL-87256,Task,PR only: [MDL-73396] Oauth2 links suspended user when there is a few users with same email,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-73396|https://moodle.atlassian.net/browse/MDL-73396|smart-link]. Please see that issue for full details about this issue and any peer review comments.,B
+99,MDL-88771,Task,PR only: [MDL-85256] - Inbound E-Mail MIME Parsing Issues,This issue captures the sprint velocity for peer reviewing [https://moodle.atlassian.net/browse/MDL-85256|https://moodle.atlassian.net/browse/MDL-85256|smart-link]. Please see that issue for full details about this issue and any peer review comments.,B
+100,MDL-89574,Bug,Add an activity dialogue is not styled correctly,"The style of activity dialogue is not consistent with other areas.
+
+We need to fix it
+
+!image-20260826-063709.png|width=1147,alt=""image-20260826-063709.png""!",B

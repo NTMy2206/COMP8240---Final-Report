@@ -1,0 +1,20 @@
+=== stage train  2026-11-03 23:25:23
+=== stage train done in 1234s
+=== stage collect  2026-11-03 23:45:57
+appceleratorstudio   TISTUD      n=  586 mae=1.4542 mdae=1.1559 (log 1.4542, best ep 9/109)
+aptanastudio         APSTUD      n=  168 mae=4.4780 mdae=3.2225 (log 4.4780, best ep 105/160)
+bamboo               BAM         n=  106 mae=0.8417 mdae=0.6888 (log 0.8417, best ep 3/108)
+clover               CLOV        n=   79 mae=3.5080 mdae=1.0361 (log 3.5080, best ep 20/120)
+datamanagement       DM          n=  935 mae=5.9962 mdae=2.2329 (log 5.9962, best ep 3/108)
+duracloud            DURACLOUD   n=  135 mae=0.7377 mdae=0.5247 (log 0.7377, best ep 9/109)
+jirasoftware         JRESERVER   n=   72 mae=1.8343 mdae=1.3044 (log 1.8343, best ep 96/126)
+mesos                MESOS       n=  337 mae=1.1187 mdae=0.7353 (log 1.1187, best ep 6/111)
+moodle               MDL         n=  235 mae=7.6864 mdae=4.4163 (log 7.6864, best ep 96/126)
+mule                 MULE        n=  180 mae=2.4884 mdae=2.0500 (log 2.4884, best ep 15/115)
+mulestudio           MULESTUDIO  n=  148 mae=3.6884 mdae=2.5950 (log 3.6884, best ep 3/108)
+springxd             XD          n=  707 mae=1.5939 mdae=1.1373 (log 1.5939, best ep 6/111)
+titanium             TIMOB       n=  452 mae=2.1123 mdae=1.3761 (log 2.1123, best ep 1/106)
+usergrid             USERGRID    n=   98 mae=1.1621 mdae=0.8417 (log 1.1621, best ep 9/114)
+median MAE over 14 projects: 1.9733
+=== stage collect done in 1s
+EXIT 0
